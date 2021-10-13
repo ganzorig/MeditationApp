@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MeditationApp">
         <activity
+            android:name=".MeditationActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_meditation"
+            android:theme="@style/Theme.MeditationApp.Fullscreen" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -19,5 +25,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

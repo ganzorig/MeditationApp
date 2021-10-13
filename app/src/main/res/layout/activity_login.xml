@@ -6,14 +6,5 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animationView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:lottie_rawRes="@raw/med"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        android:background="@color/beige_100"
-        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

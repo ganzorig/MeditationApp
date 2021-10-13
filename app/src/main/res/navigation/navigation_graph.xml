@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.miu.meditationapp.ui.main.MainFragment"
+        android:name="com.miu.meditationapp.ui.main.LearnFragment"
         android:label="main_fragment"
         tools:layout="@layout/main_fragment" >
         <action

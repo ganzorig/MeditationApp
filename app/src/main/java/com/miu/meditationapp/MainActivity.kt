@@ -1,17 +1,11 @@
 package com.miu.meditationapp
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
 import com.miu.meditationapp.ui.main.AboutFragment
 import com.miu.meditationapp.ui.main.HomeFragment
-import com.miu.meditationapp.ui.main.LearnFragment
 import com.miu.meditationapp.ui.main.ForumFragment
-import com.miu.meditationapp.ui.main.MainFragment
+import com.miu.meditationapp.ui.main.LearnFragment
 import kotlinx.android.synthetic.main.main_activity.*
 
 class MainActivity : AppCompatActivity() {
