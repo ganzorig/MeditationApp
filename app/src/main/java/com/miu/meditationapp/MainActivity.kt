@@ -6,13 +6,13 @@ import com.miu.meditationapp.ui.main.AboutFragment
 import com.miu.meditationapp.ui.main.HomeFragment
 import com.miu.meditationapp.ui.main.ForumFragment
 import com.miu.meditationapp.ui.main.LearnFragment
-import kotlinx.android.synthetic.main.main_activity.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 //    lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_activity)
+        setContentView(R.layout.activity_main)
 
 //        supportActionBar?.title = person.firstName
 //        supportActionBar?.subtitle = person.profession
