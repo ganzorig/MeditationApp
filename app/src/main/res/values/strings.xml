@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MeditationApp</string>
+    <string name="skip">Skip</string>
 </resources>
