@@ -4,59 +4,95 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/fullscreenBackgroundColor"
     android:theme="@style/ThemeOverlay.MeditationApp.FullscreenContainer"
-    tools:context=".MeditationActivity">
+    tools:context=".MeditationActivity"
+    android:background="@color/green_700"
+    android:keepScreenOn="true">
 
-    <!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
-    <TextView
-        android:id="@+id/fullscreen_content"
+    <ImageButton
+        android:id="@+id/speech"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="centerInside"
+        android:background="@color/transparent"
+        app:srcCompat="@drawable/speech"
+        android:layout_gravity="right|bottom"
+        android:layout_margin="24dp"/>
+
+    <ImageButton
+        android:id="@+id/sound"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="centerInside"
+        android:background="@color/transparent"
+        app:srcCompat="@drawable/sound_no"
+        android:layout_gravity="left|bottom"
+        android:layout_margin="24dp"/>
+
+    <ImageButton
+        android:id="@+id/close"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="centerInside"
+        android:background="@color/transparent"
+        app:srcCompat="@drawable/times"
+        android:layout_gravity="right|top"
+        android:layout_margin="24dp"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:text="@string/dummy_content"
-        android:textColor="?attr/fullscreenTextColor"
-        android:textSize="50sp"
-        android:textStyle="bold" />
+        android:orientation="horizontal"
+        android:background="@color/green_505"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Meditate"
+            android:textFontWeight="700"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:layout_marginBottom="8dp"/>
+        <Button
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/orange_300"
+            android:text="Start" />
+
+        <TextView
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:textSize="32sp" />
+
+
+    </LinearLayout>
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:lottie_rawRes="@raw/med"
-        app:lottie_autoPlay="true"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:lottie_rawRes="@raw/flowers"
         app:lottie_loop="true"
-        android:background="@color/beige_100"
-        tools:ignore="MissingConstraints" />
+        app:lottie_autoPlay="true"
+        tools:ignore="MissingConstraints"/>
 
-    <!-- This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows. -->
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
-
-        <LinearLayout
-            android:id="@+id/fullscreen_content_controls"
-            style="@style/Widget.Theme.MeditationApp.ButtonBar.Fullscreen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:orientation="horizontal"
-            tools:ignore="UselessParent">
-
-            <Button
-                android:id="@+id/dummy_button"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/dummy_button" />
-
-        </LinearLayout>
-    </FrameLayout>
 
 </FrameLayout>

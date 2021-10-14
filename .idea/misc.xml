@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/font/avenir.xml" value="0.3076923076923077" />
+        <entry key="app/src/main/res/layout/activity_breath.xml" value="0.14895833333333333" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.13240740740740742" />
-        <entry key="app/src/main/res/layout/activity_meditation.xml" value="0.13240740740740742" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/layout/activity_meditation.xml" value="0.67" />
         <entry key="app/src/main/res/layout/fragment_about.xml" value="0.13240740740740742" />
         <entry key="app/src/main/res/layout/fragment_forum.xml" value="0.13240740740740742" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.13240740740740742" />
