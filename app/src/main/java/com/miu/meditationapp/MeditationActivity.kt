@@ -60,7 +60,7 @@ class MeditationActivity : AppCompatActivity() {
         }
 
         close.setOnClickListener {
-            showdialog(this)
+            showDialog(this)
         }
 
         start.setOnClickListener {
@@ -79,7 +79,6 @@ class MeditationActivity : AppCompatActivity() {
                 sound.setImageResource(R.drawable.sound_no)
                 mediaPlayer.start()
             }
-
         }
     }
 
@@ -93,16 +92,16 @@ class MeditationActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        showdialog(this)
+        showDialog(this)
 
     }
 
-    private fun showdialog(context: Context){
+    private fun showDialog(context: Context){
         val builder: AlertDialog.Builder = AlertDialog.Builder(context)
 
-        builder.setMessage("Do you want to close this application ?").setCancelable(true)
+        builder.setMessage("Do you want to stop meditating ?").setCancelable(true)
         builder.setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, which ->
-            
+
             finish()
         })
 
