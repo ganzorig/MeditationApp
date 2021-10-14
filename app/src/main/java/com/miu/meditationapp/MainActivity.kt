@@ -1,21 +1,14 @@
 package com.miu.meditationapp
 
-import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
-import android.view.ViewParent
-import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.core.content.ContentProviderCompat
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
-import androidx.core.view.plusAssign
-import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.button.MaterialButton
-import com.miu.meditationapp.ui.main.MainFragment
+import com.miu.meditationapp.ui.main.AboutFragment
+import com.miu.meditationapp.ui.main.HomeFragment
+import com.miu.meditationapp.ui.main.ForumFragment
+import com.miu.meditationapp.ui.main.LearnFragment
+import kotlinx.android.synthetic.main.main_activity.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,97 +18,36 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-        setOnboardingItems()
-        setupIndicators()
-        setCurrentIndicator(0)
+
+
+//        supportActionBar?.title = person.firstName
+//        supportActionBar?.subtitle = person.profession
+
+        val adapter = ViewPagerAdapter(supportFragmentManager)
+        adapter.addFragment(HomeFragment(), "Home")
+        adapter.addFragment(AboutFragment(), "About")
+        adapter.addFragment(LearnFragment(), "Learn")
+        adapter.addFragment(ForumFragment(), "Forum")
+
+        viewPager.adapter = adapter
+
+        tabs.setupWithViewPager(viewPager)
+
+        tabs.getTabAt(0)!!.setIcon(R.drawable.home)
+        tabs.getTabAt(1)!!.setIcon(R.drawable.about)
+        tabs.getTabAt(2)!!.setIcon(R.drawable.work)
+        tabs.getTabAt(3)!!.setIcon(R.drawable.contact)
+//        if (savedInstanceState == null) {
+//            supportFragmentManager.beginTransaction()
+//                .replace(R.id.container, MainFragment.newInstance())
+//                .commitNow()
+//        }
+
+        // startActivity(Intent(applicationContext, LoginActivity::class.java))
+//        navController = this.findNavController(R.id.fragment)
+//        NavigationUI.setupActionBarWithNavController(this, navController)
+
 
     }
-    private fun setOnboardingItems(){
-        onboardingItemsAdapter = OnboardingItemsAdapter(
-            listOf(
-                OnboardingItem(
-                    onboardingImage = R.drawable.pic1,
-                    title = "Welcome to Meditation",
-                    description = "Meditation is a practice where an individual uses a technique."
-                ),
-                OnboardingItem(
-                    onboardingImage = R.drawable.pic3,
-                    title = "Let's meditate",
-                    description = "Meditation is practiced in numerous religious traditions. "
-                )
-            )
-        )
-        val onboardingViewPager = findViewById<ViewPager2>(R.id.onboardingViewPager)
-        onboardingViewPager.adapter = onboardingItemsAdapter
-        onboardingViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
-                setCurrentIndicator(position)
-            }
-        })
-        (onboardingViewPager.getChildAt(0) as RecyclerView). overScrollMode =
-            RecyclerView.OVER_SCROLL_NEVER
-        findViewById<ImageView>(R.id.imageNext).setOnClickListener{
-            if (onboardingViewPager.currentItem+1 < onboardingItemsAdapter.itemCount){
-                onboardingViewPager.currentItem += 1
-            } else {
-                navigateToHomeActivity()
-            }
-        }
-        findViewById<TextView>(R.id.textSkip).setOnClickListener{
-            navigateToHomeActivity()
-        }
-        findViewById<MaterialButton>(R.id.buttonGetStarted).setOnClickListener{
-            navigateToHomeActivity()
-        }
 
-        }
-
-    private fun navigateToHomeActivity(){
-        startActivity(Intent(applicationContext,HomeActivity::class.java))
-        finish()
-    }
-
-
-    private fun setupIndicators(){
-        indicatorContainer = findViewById(R.id.indicatorsContainer)
-        val indicators = arrayOfNulls<ImageView>(onboardingItemsAdapter.itemCount)
-        val layoutParams: LinearLayout.LayoutParams =
-            LinearLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT )
-        layoutParams.setMargins(8,0,8,0,)
-        for (i  in indicators.indices) {
-            indicators[i] = ImageView(applicationContext)
-            indicators[i]?.let {
-                it.setImageDrawable(
-                    ContextCompat.getDrawable(
-                        applicationContext,
-                        R.drawable.indicator_active_background
-                    )
-                )
-                it.layoutParams = layoutParams
-                indicatorContainer.addView(it)
-            }
-        }
-    }
-    private fun setCurrentIndicator (position: Int){
-        val childCount = indicatorContainer.childCount
-        for( i  in 0 until childCount){
-            val imageView = indicatorContainer.getChildAt(i) as ImageView
-            if(i == position){
-                imageView.setImageDrawable(
-                    ContextCompat.getDrawable(
-                        applicationContext,
-                        R.drawable.indicator_active_background
-                    )
-                )
-            }else {
-                imageView.setImageDrawable(
-                    ContextCompat.getDrawable(
-                        applicationContext,
-                        R.drawable.indicator_inactive_backgound
-                    )
-                )
-            }
-        }
-    }
 }

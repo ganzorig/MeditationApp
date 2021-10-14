@@ -10,8 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MeditationApp">
         <activity
+            android:name=".OnboardingActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
+        <activity
+            android:name=".MeditationActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_meditation"
+            android:theme="@style/Theme.MeditationApp.Fullscreen" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
