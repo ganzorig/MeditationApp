@@ -30,14 +30,34 @@ class OnboardingActivity : AppCompatActivity() {
         onboardingItemsAdapter = OnboardingItemsAdapter(
             listOf(
                 OnboardingItem(
-                    onboardingImage = R.drawable.pic1,
-                    title = "Welcome to Meditation",
-                    description = "Meditation is a practice where an individual uses a technique."
+                    onboardingImage = R.drawable.img_hellowe,
+                    title = "Welcome to GENO",
+                    description = "We'll show you how to train your mind for happier, healthier life."
                 ),
                 OnboardingItem(
-                    onboardingImage = R.drawable.pic3,
-                    title = "Let's meditate",
-                    description = "Meditation is practiced in numerous religious traditions. "
+                    onboardingImage = R.drawable.img_hi5,
+                    title = "Meditation made simple!",
+                    description = "It's okay if you've never meditated before"
+                ),
+                OnboardingItem(
+                    onboardingImage = R.drawable.img_breathe,
+                    title = "Breathe",
+                    description = "We'll guide you through ..."
+                ),
+                OnboardingItem(
+                    onboardingImage = R.drawable.img_community,
+                    title = "Community",
+                    description = "You can reach out to anyone at anytime."
+                ),
+                OnboardingItem(
+                    onboardingImage = R.drawable.img_inspired,
+                    title = "Get inspired",
+                    description = "In fact, we made a quick video to help you learn the basics"
+                ),
+                OnboardingItem(
+                    onboardingImage = R.drawable.pic1,
+                    title = "Ready!",
+                    description = "Now, get ready to sit back and enjoy GENO application"
                 )
             )
         )
