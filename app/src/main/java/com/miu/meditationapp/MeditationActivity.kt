@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.speech.tts.TextToSpeech
 import android.view.View
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AlertDialog
 import com.miu.meditationapp.databinding.ActivityMeditationBinding
 import kotlinx.android.synthetic.main.activity_meditation.*
@@ -22,6 +23,7 @@ class MeditationActivity : AppCompatActivity() {
     private lateinit var mediaPlayer: MediaPlayer
     private var isFullscreen: Boolean = false
     private lateinit var tts: TextToSpeech
+    private lateinit var  values : Array<String>
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +33,10 @@ class MeditationActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         isFullscreen = true
+
+        values = resources.getStringArray(R.array.minutes);
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, values)
+        spinner.adapter = adapter;
 
         val textIndicator = indicator
         mediaPlayer = MediaPlayer.create(applicationContext, R.raw.back_sound)
@@ -68,15 +74,15 @@ class MeditationActivity : AppCompatActivity() {
 
             mediaPlayer.isLooping = true
             mediaPlayer.start()
-            start.visibility = View.GONE
+            start.text = getString(R.string.str_end)
         }
 
         sound.setOnClickListener {
             if(mediaPlayer.isPlaying) {
-                sound.setImageResource(R.drawable.sound)
+                sound.setImageResource(R.drawable.sound_no)
                 mediaPlayer.pause()
             } else {
-                sound.setImageResource(R.drawable.sound_no)
+                sound.setImageResource(R.drawable.sound)
                 mediaPlayer.start()
             }
         }
@@ -93,7 +99,6 @@ class MeditationActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         showDialog(this)
-
     }
 
     private fun showDialog(context: Context){
@@ -101,7 +106,6 @@ class MeditationActivity : AppCompatActivity() {
 
         builder.setMessage("Do you want to stop meditating ?").setCancelable(true)
         builder.setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, which ->
-
             finish()
         })
 

@@ -6,34 +6,50 @@
     android:layout_height="match_parent"
     android:theme="@style/ThemeOverlay.MeditationApp.FullscreenContainer"
     tools:context=".MeditationActivity"
-    android:background="@color/green_700"
+    android:background="@color/green_800"
     android:keepScreenOn="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:background="@drawable/background"></LinearLayout>
+        android:background="@drawable/background">
 
-    <ImageButton
-        android:id="@+id/speech"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:scaleType="centerInside"
-        android:background="@color/transparent"
-        app:srcCompat="@drawable/speech"
-        android:layout_gravity="right|bottom"
-        android:layout_margin="24dp"/>
+    </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/sound"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:scaleType="centerInside"
-        android:background="@color/transparent"
-        app:srcCompat="@drawable/sound_no"
-        android:layout_gravity="left|bottom"
-        android:layout_margin="24dp"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/sound"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="left|bottom"
+            android:layout_margin="24dp"
+            android:background="@color/transparent"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/sound"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="677dp" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:id="@+id/speech"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right|bottom"
+            android:layout_margin="24dp"
+            android:background="@color/transparent"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/speech"
+            tools:layout_editor_absoluteX="357dp"
+            tools:layout_editor_absoluteY="677dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageButton
         android:id="@+id/close"
@@ -55,27 +71,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:padding="24dp">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_gravity="center"
             android:text="Meditate"
             android:textFontWeight="700"
             android:gravity="center"
             android:textColor="@color/white"
             android:textSize="32sp"
             android:layout_marginBottom="8dp"/>
-        <Button
-            android:id="@+id/start"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textAllCaps="false"
-            android:backgroundTint="@color/orange_300"
-            android:text="Start" />
 
         <TextView
             android:id="@+id/indicator"
@@ -85,8 +95,19 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/white"
             android:layout_gravity="center"
-            android:textSize="32sp" />
+            android:text="20:00"
+            android:textSize="32sp"/>
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/start"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            app:cornerRadius="20dp"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/orange_300"
+            android:text="@string/str_start" />
 
     </LinearLayout>
 
@@ -98,7 +119,6 @@
         app:lottie_rawRes="@raw/flowers"
         app:lottie_loop="true"
         app:lottie_autoPlay="true"
+        android:layout_marginBottom="-30dp"
         tools:ignore="MissingConstraints"/>
-
-
 </FrameLayout>

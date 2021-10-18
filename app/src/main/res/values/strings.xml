@@ -1,7 +1,18 @@
 <resources>
     <string name="app_name">MeditationApp</string>
+    <string name="str_start">Start</string>
+    <string name="str_end">End</string>
+
     <string name="hello_blank_fragment">sadas</string>
+    <string name="good_morning">Good morning!</string>
     <string name="title_activity_meditation">MeditationActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="quote">Brilliant things happen in calm minds. Be calm. You\'re brilliant.</string>
+
+
+    <string-array name="minutes">
+        <item>20:00 minutes</item>
+        <item>10:00 minutes</item>
+    </string-array>
 </resources>
