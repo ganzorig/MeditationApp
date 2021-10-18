@@ -19,7 +19,7 @@ class OnboardingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_activity)
+        setContentView(R.layout.activity_onboarding)
 
         setOnboardingItems()
         setupIndicators()
@@ -68,7 +68,7 @@ class OnboardingActivity : AppCompatActivity() {
     }
 
     private fun navigateToHomeActivity(){
-        startActivity(Intent(applicationContext,HomeActivity::class.java))
+        startActivity(Intent(applicationContext,MainActivity::class.java))
         finish()
     }
 

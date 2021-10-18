@@ -2,70 +2,26 @@ package com.miu.meditationapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.annotation.SuppressLint
-import android.os.Build
+import android.content.Context
+import android.content.DialogInterface
+import android.media.MediaPlayer
 import android.os.Bundle
-import android.os.Handler
-import android.view.MotionEvent
+import android.os.CountDownTimer
+import android.speech.tts.TextToSpeech
 import android.view.View
-import android.view.WindowInsets
-import android.widget.LinearLayout
-import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import com.miu.meditationapp.databinding.ActivityMeditationBinding
+import kotlinx.android.synthetic.main.activity_meditation.*
+import java.util.*
+import java.util.concurrent.TimeUnit
 
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- */
+
 class MeditationActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMeditationBinding
-    private lateinit var fullscreenContent: TextView
-    private lateinit var fullscreenContentControls: LinearLayout
-    private val hideHandler = Handler()
-
-    @SuppressLint("InlinedApi")
-    private val hidePart2Runnable = Runnable {
-        // Delayed removal of status and navigation bar
-        if (Build.VERSION.SDK_INT >= 30) {
-            fullscreenContent.windowInsetsController?.hide(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
-        } else {
-            // Note that some of these constants are new as of API 16 (Jelly Bean)
-            // and API 19 (KitKat). It is safe to use them, as they are inlined
-            // at compile-time and do nothing on earlier devices.
-            fullscreenContent.systemUiVisibility =
-                View.SYSTEM_UI_FLAG_LOW_PROFILE or
-                        View.SYSTEM_UI_FLAG_FULLSCREEN or
-                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
-                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
-                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
-                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-        }
-    }
-    private val showPart2Runnable = Runnable {
-        // Delayed display of UI elements
-        supportActionBar?.show()
-        fullscreenContentControls.visibility = View.VISIBLE
-    }
+    private lateinit var mediaPlayer: MediaPlayer
     private var isFullscreen: Boolean = false
-
-    private val hideRunnable = Runnable { hide() }
-
-    /**
-     * Touch listener to use for in-layout UI controls to delay hiding the
-     * system UI. This is to prevent the jarring behavior of controls going away
-     * while interacting with activity UI.
-     */
-    private val delayHideTouchListener = View.OnTouchListener { view, motionEvent ->
-        when (motionEvent.action) {
-            MotionEvent.ACTION_DOWN -> if (AUTO_HIDE) {
-                delayedHide(AUTO_HIDE_DELAY_MILLIS)
-            }
-            MotionEvent.ACTION_UP -> view.performClick()
-            else -> {
-            }
-        }
-        false
-    }
+    private lateinit var tts: TextToSpeech
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -73,93 +29,86 @@ class MeditationActivity : AppCompatActivity() {
 
         binding = ActivityMeditationBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         isFullscreen = true
 
-        // Set up the user interaction to manually show or hide the system UI.
-        fullscreenContent = binding.fullscreenContent
-        fullscreenContent.setOnClickListener { toggle() }
+        val textIndicator = indicator
+        mediaPlayer = MediaPlayer.create(applicationContext, R.raw.back_sound)
 
-        fullscreenContentControls = binding.fullscreenContentControls
+        val timer = object: CountDownTimer(1200000, 1000) {
+            var min = 20L
+            var sec = 0L
+            override fun onTick(ms: Long) {
+                min = TimeUnit.MILLISECONDS.toMinutes(ms) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(ms))
+                sec = TimeUnit.MILLISECONDS.toSeconds(ms) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(ms))
 
-        // Upon interacting with UI controls, delay any scheduled hide()
-        // operations to prevent the jarring behavior of controls going away
-        // while interacting with the UI.
-        binding.dummyButton.setOnTouchListener(delayHideTouchListener)
-    }
+                if(min == 19L && sec == 55L) {
+                    tts = TextToSpeech(applicationContext, TextToSpeech.OnInitListener {
+                        if(it == TextToSpeech.SUCCESS) {
+                            tts.language = Locale.US
+                            tts.setSpeechRate(0.8F)
+                            tts.speak("Close your eyes and sit comfortably", TextToSpeech.QUEUE_ADD, null)
+                        }
+                    })
+                }
+                textIndicator.text = "$min:$sec"
+            }
 
-    override fun onPostCreate(savedInstanceState: Bundle?) {
-        super.onPostCreate(savedInstanceState)
+            override fun onFinish() {
+                println("finish")
+            }
+        }
 
-        // Trigger the initial hide() shortly after the activity has been
-        // created, to briefly hint to the user that UI controls
-        // are available.
-        delayedHide(100)
-    }
+        close.setOnClickListener {
+            showDialog(this)
+        }
 
-    private fun toggle() {
-        if (isFullscreen) {
-            hide()
-        } else {
-            show()
+        start.setOnClickListener {
+            timer.start()
+
+            mediaPlayer.isLooping = true
+            mediaPlayer.start()
+            start.visibility = View.GONE
+        }
+
+        sound.setOnClickListener {
+            if(mediaPlayer.isPlaying) {
+                sound.setImageResource(R.drawable.sound)
+                mediaPlayer.pause()
+            } else {
+                sound.setImageResource(R.drawable.sound_no)
+                mediaPlayer.start()
+            }
         }
     }
 
-    private fun hide() {
-        // Hide UI first
-        supportActionBar?.hide()
-        fullscreenContentControls.visibility = View.GONE
-        isFullscreen = false
 
-        // Schedule a runnable to remove the status and navigation bar after a delay
-        hideHandler.removeCallbacks(showPart2Runnable)
-        hideHandler.postDelayed(hidePart2Runnable, UI_ANIMATION_DELAY.toLong())
-    }
-
-    private fun show() {
-        // Show the system bar
-        if (Build.VERSION.SDK_INT >= 30) {
-            fullscreenContent.windowInsetsController?.show(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
-        } else {
-            fullscreenContent.systemUiVisibility =
-                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
-                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+    override fun onStop() {
+        super.onStop()
+        if (mediaPlayer.isPlaying) {
+            mediaPlayer.stop()
+            mediaPlayer.release()
         }
-        isFullscreen = true
-
-        // Schedule a runnable to display UI elements after a delay
-        hideHandler.removeCallbacks(hidePart2Runnable)
-        hideHandler.postDelayed(showPart2Runnable, UI_ANIMATION_DELAY.toLong())
     }
 
-    /**
-     * Schedules a call to hide() in [delayMillis], canceling any
-     * previously scheduled calls.
-     */
-    private fun delayedHide(delayMillis: Int) {
-        hideHandler.removeCallbacks(hideRunnable)
-        hideHandler.postDelayed(hideRunnable, delayMillis.toLong())
+    override fun onBackPressed() {
+        showDialog(this)
+
     }
 
-    companion object {
-        /**
-         * Whether or not the system UI should be auto-hidden after
-         * [AUTO_HIDE_DELAY_MILLIS] milliseconds.
-         */
-        private const val AUTO_HIDE = true
+    private fun showDialog(context: Context){
+        val builder: AlertDialog.Builder = AlertDialog.Builder(context)
 
-        /**
-         * If [AUTO_HIDE] is set, the number of milliseconds to wait after
-         * user interaction before hiding the system UI.
-         */
-        private const val AUTO_HIDE_DELAY_MILLIS = 3000
+        builder.setMessage("Do you want to stop meditating ?").setCancelable(true)
+        builder.setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, which ->
 
-        /**
-         * Some older devices needs a small delay between UI widget updates
-         * and a change of the status and navigation bar.
-         */
-        private const val UI_ANIMATION_DELAY = 300
+            finish()
+        })
+
+        builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, which -> dialog.cancel() })
+        val alert = builder.create()
+        alert.setTitle("Are you sure")
+        alert.show()
     }
+
 }
