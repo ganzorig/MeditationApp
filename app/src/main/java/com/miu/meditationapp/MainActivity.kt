@@ -1,6 +1,7 @@
 package com.miu.meditationapp
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
@@ -8,7 +9,7 @@ import com.miu.meditationapp.ui.main.AboutFragment
 import com.miu.meditationapp.ui.main.HomeFragment
 import com.miu.meditationapp.ui.main.ForumFragment
 import com.miu.meditationapp.ui.main.LearnFragment
-import kotlinx.android.synthetic.main.main_activity.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_activity)
+        setContentView(R.layout.activity_main)
 
 
 //        supportActionBar?.title = person.firstName
@@ -47,7 +48,10 @@ class MainActivity : AppCompatActivity() {
 //        navController = this.findNavController(R.id.fragment)
 //        NavigationUI.setupActionBarWithNavController(this, navController)
 
-
+        // if(spf !isOnboardSeen) {
+        // startActivity(Intent(applicationContext, OnboardingActivity::class.java))}
+        //
     }
+
 
 }
