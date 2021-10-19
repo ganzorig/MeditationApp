@@ -10,9 +10,19 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="quote">Brilliant things happen in calm minds. Be calm. You\'re brilliant.</string>
 
-
     <string-array name="minutes">
         <item>20:00 minutes</item>
         <item>10:00 minutes</item>
     </string-array>
+    <string name="lbl_firstname">First Name</string>
+    <string name="lbl_lastname">Last Name</string>
+    <string name="lbl_email">Email</string>
+    <string name="lbl_password">Password</string>
+    <string name="lbl_confirmpassword">Confirm password</string>
+    <string name="btn_add">Create User</string>
+    <string name="lbl_login_email">Email:</string>
+    <string name="lbl_login_password">Password:</string>
+    <string name="btn_login">Log In</string>
+    <string name="idTVLogin">Already a User ? Login Here</string>
+    <string name="registerTV">Sign Up! Click Here</string>
 </resources>
