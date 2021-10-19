@@ -9,7 +9,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+        
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -50,7 +50,6 @@
                 android:text="Hi there,"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-
             <TextView
                 android:id="@+id/about"
                 android:layout_width="match_parent"
@@ -65,8 +64,6 @@
                 android:id="@+id/cal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
-
-
         </LinearLayout>
     </ScrollView>
 </FrameLayout>
