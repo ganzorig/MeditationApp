@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         <entry key="app/src/main/res/drawable/backround.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/drawable/button_back.xml" value="0.29384615384615387" />
@@ -35,6 +36,14 @@
         <entry key="app/src/main/res/layout/main_activity.xml" value="0.335" />
         <entry key="app/src/main/res/layout/onbaording_item_container.xml" value="0.25" />
 >>>>>>> 724ac66966b4d393ade9b189bace5cd76309e54c
+=======
+        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/drawable/progress_bar.xml" value="0.28177083333333336" />
+        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/drawable/rounded_button.xml" value="0.28177083333333336" />
+        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/activity_login.xml" value="0.265625" />
+        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/activity_login_add_user.xml" value="0.265625" />
+        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/activity_meditation_forum.xml" value="0.265625" />
+        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/main_activity.xml" value="0.265625" />
+>>>>>>> Stashed changes
       </map>
     </option>
   </component>
