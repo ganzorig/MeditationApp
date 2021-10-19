@@ -1,6 +1,8 @@
 package com.miu.meditationapp
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -17,16 +19,21 @@ class LoginActivity : AppCompatActivity() {
     lateinit var registertv:TextView
     lateinit var loadingPB:ProgressBar
     lateinit var mAuth:FirebaseAuth
+    private lateinit var preferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+
         email = findViewById(R.id.ptxt_login_email)
         pwd = findViewById(R.id.ptxt_login_password)
         loginbutton = findViewById(R.id.btn_login)
         registertv = findViewById(R.id.registerTV)
         mAuth = FirebaseAuth.getInstance()
         loadingPB = findViewById(R.id.progressbar)
+
+        preferences = getSharedPreferences("ONBOARD", Context.MODE_PRIVATE)
 
         registertv.setOnClickListener() {
             startActivity(Intent(this, LoginAddUser::class.java))
@@ -41,8 +48,7 @@ class LoginActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         loadingPB.visibility = View.GONE
                         Toast.makeText(this, "Login Successful..", Toast.LENGTH_SHORT)
-                        startActivity(Intent(this, MainActivity::class.java))
-                        finish()
+                        startMainActivity()
                     } else {
                         loadingPB.visibility = View.GONE
                         Toast.makeText(this, "Email or Password is wrong. Please try again.", Toast.LENGTH_SHORT)
@@ -52,12 +58,24 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    private fun startMainActivity() {
+        if (isSeenOnbaord()) {
+            startActivity(Intent(this, MainActivity::class.java))
+        } else {
+            startActivity(Intent(this, OnboardingActivity::class.java))
+        }
+        finish()
+    }
+
     override fun onStart() {
         super.onStart()
         var user: FirebaseUser? = mAuth.currentUser
         if (user != null) {
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
+            startMainActivity()
         }
+    }
+
+    fun isSeenOnbaord(): Boolean {
+        return preferences.getBoolean("ISCOMPLETE", false)
     }
 }

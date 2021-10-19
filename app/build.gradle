@@ -4,8 +4,6 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
 }
 
-apply plugin: 'com.google.gms.google-services'
-
 android {
     compileSdk 30
 
@@ -38,6 +36,7 @@ android {
 }
 
 dependencies {
+    apply plugin: 'com.google.gms.google-services'
     implementation 'com.google.firebase:firebase-database-ktx:20.0.2'
     apply plugin : "kotlin-android"
     apply plugin : "kotlin-android-extensions"

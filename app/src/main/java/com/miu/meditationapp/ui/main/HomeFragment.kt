@@ -22,7 +22,6 @@ import java.util.*
 class HomeFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         view.button.setOnClickListener {
@@ -33,28 +32,23 @@ class HomeFragment : Fragment() {
             startActivity(Intent(context, BreathActivity::class.java))
         }
 
-
         view.remind.setOnClickListener {
             var calendar: Calendar = Calendar.getInstance()
 
-            calendar.set(Calendar.HOUR_OF_DAY, 3)
-            calendar.set(Calendar.MINUTE, 13)
-            calendar.set(Calendar.SECOND, 0)
+            calendar.set(Calendar.HOUR_OF_DAY, 15)
+            calendar.set(Calendar.MINUTE, 34)
+            calendar.set(Calendar.SECOND, 15)
 
             var intent = Intent(context, NotificationReceiver::class.java)
+            intent.action = "MY_NOTIFICATION_MESSAGE";
 
-            var pendingIntent: PendingIntent = PendingIntent.getBroadcast(context, 100, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+            var pendingIntent: PendingIntent = PendingIntent.getBroadcast(this.context, 100, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 
             var alarmManager: AlarmManager = context?.getSystemService(Context.ALARM_SERVICE) as AlarmManager
             alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, AlarmManager.INTERVAL_DAY, pendingIntent)
 
             Toast.makeText(context, "Set alarm", Toast.LENGTH_SHORT).show()
         }
-
-//        view.onboard.setOnClickListener {
-//            startActivity(Intent(context, OnboardingActivity::class.java))
-//        }
-
 
         return view
     }

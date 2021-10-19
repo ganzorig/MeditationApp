@@ -1,6 +1,8 @@
 package com.miu.meditationapp
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
@@ -14,19 +16,21 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.button.MaterialButton
 
 class OnboardingActivity : AppCompatActivity() {
-
     private lateinit var onboardingItemsAdapter: OnboardingItemsAdapter
     private lateinit var indicatorContainer: LinearLayout
+    private lateinit var preferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_onboarding)
 
+        preferences = applicationContext.getSharedPreferences("ONBOARD", Context.MODE_PRIVATE)
+
         setOnboardingItems()
         setupIndicators()
         setCurrentIndicator(0)
-
     }
+
     private fun setOnboardingItems(){
         onboardingItemsAdapter = OnboardingItemsAdapter(
             listOf(
@@ -56,7 +60,7 @@ class OnboardingActivity : AppCompatActivity() {
                     description = "In fact, we made a quick video to help you learn the basics"
                 ),
                 OnboardingItem(
-                    onboardingImage = R.drawable.pic1,
+                    onboardingImage = R.drawable.img_paint,
                     title = "Ready!",
                     description = "Now, get ready to sit back and enjoy GENO application"
                 )
@@ -77,6 +81,7 @@ class OnboardingActivity : AppCompatActivity() {
                 onboardingViewPager.currentItem += 1
             } else {
                 navigateToHomeActivity()
+                setCompleteOnboarding()
             }
         }
         findViewById<TextView>(R.id.textSkip).setOnClickListener{
@@ -84,13 +89,18 @@ class OnboardingActivity : AppCompatActivity() {
         }
         findViewById<MaterialButton>(R.id.buttonGetStarted).setOnClickListener{
             navigateToHomeActivity()
+            setCompleteOnboarding()
         }
 
     }
 
-    private fun navigateToHomeActivity(){
+    private fun navigateToHomeActivity() {
         startActivity(Intent(applicationContext,MainActivity::class.java))
         finish()
+    }
+
+    private fun setCompleteOnboarding() {
+        preferences.edit().putBoolean("ISCOMPLETE", true).apply()
     }
 
 
@@ -100,7 +110,7 @@ class OnboardingActivity : AppCompatActivity() {
         val layoutParams: LinearLayout.LayoutParams =
             LinearLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT )
         layoutParams.setMargins(8,0,8,0,)
-        for (i  in indicators.indices) {
+        for (i in indicators.indices) {
             indicators[i] = ImageView(applicationContext)
             indicators[i]?.let {
                 it.setImageDrawable(

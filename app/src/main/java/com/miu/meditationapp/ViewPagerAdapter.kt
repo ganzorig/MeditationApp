@@ -9,6 +9,7 @@ class ViewPagerAdapter (fm:FragmentManager) : FragmentStatePagerAdapter(fm){
     private val mFragmentTitleList = ArrayList<String>()
 
     override fun getItem(position: Int): Fragment {
+
         return mFragmentList[position]
     }
 
