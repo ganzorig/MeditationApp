@@ -19,9 +19,9 @@ class MainActivity : AppCompatActivity() {
 
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(HomeFragment(), "Home")
-        adapter.addFragment(AboutFragment(), "About")
         adapter.addFragment(LearnFragment(), "Learn")
         adapter.addFragment(ForumFragment(), "Forum")
+        adapter.addFragment(AboutFragment(), "About")
 
         viewPager.adapter = adapter
 

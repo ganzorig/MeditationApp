@@ -29,7 +29,8 @@
         app:tabIconTintMode="src_in"
         app:tabIndicatorColor="@color/orange_500"
         app:tabIndicatorGravity="top"
-        app:tabIndicatorAnimationMode="linear"
+        app:tabIndicatorAnimationMode="elastic"
         app:tabIndicatorHeight="3dp"
-        app:tabIndicatorFullWidth="false"/>
+        app:tabIndicatorFullWidth="false"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

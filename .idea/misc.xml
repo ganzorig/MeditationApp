@@ -3,19 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
+        <entry key="app/src/main/res/drawable/backround.xml" value="0.16510416666666666" />
+        <entry key="app/src/main/res/drawable/button_back.xml" value="0.29384615384615387" />
         <entry key="app/src/main/res/font/avenir.xml" value="0.3076923076923077" />
-        <entry key="app/src/main/res/layout/activity_breath.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/layout/activity_breath.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.13240740740740742" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14895833333333333" />
-        <entry key="app/src/main/res/layout/activity_meditation.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_meditation.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_about.xml" value="0.13240740740740742" />
         <entry key="app/src/main/res/layout/fragment_forum.xml" value="0.13240740740740742" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.13240740740740742" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_learn.xml" value="0.27794871794871795" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.13240740740740742" />
+=======
+        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/drawable/progress_bar.xml" value="0.28177083333333336" />
+        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/activity_login.xml" value="0.265625" />
+        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/activity_login_add_user.xml" value="0.265625" />
+        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/activity_meditation_forum.xml" value="0.265625" />
+        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/main_activity.xml" value="0.265625" />
+>>>>>>> 79b75270b27a6e24ebe8fde7e93546e3c3ed3705
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
