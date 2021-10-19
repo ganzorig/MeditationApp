@@ -7,19 +7,14 @@
         <entry key="app/src/main/res/drawable/icon_outer_background.xml" value="0.3921875" />
         <entry key="app/src/main/res/drawable/indicator_active_background.xml" value="0.228125" />
         <entry key="app/src/main/res/drawable/indicator_inactive_backgound.xml" value="0.228125" />
-<<<<<<< HEAD
         <entry key="app/src/main/res/drawable/view_pager_background.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_breath.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_meditation.xml" value="0.25" />
-=======
-        <entry key="app/src/main/res/drawable/view_pager_background.xml" value="0.3921875" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.128125" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.128125" />
->>>>>>> useless
         <entry key="app/src/main/res/layout/activity_onboarding.xml" value="0.25104166666666666" />
         <entry key="app/src/main/res/layout/fragment_about.xml" value="0.25104166666666666" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.128125" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/main_activity.xml" value="0.335" />
         <entry key="app/src/main/res/layout/onbaording_item_container.xml" value="0.25" />
       </map>

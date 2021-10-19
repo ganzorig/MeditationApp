@@ -1,10 +1,7 @@
 package com.miu.meditationapp
 
-
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
 import com.miu.meditationapp.ui.main.AboutFragment
 import com.miu.meditationapp.ui.main.HomeFragment
 import com.miu.meditationapp.ui.main.ForumFragment
@@ -12,23 +9,19 @@ import com.miu.meditationapp.ui.main.LearnFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var onboardingItemsAdapter: OnboardingItemsAdapter
-    private lateinit var indicatorContainer: LinearLayout
-
+    //    lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
 //        supportActionBar?.title = person.firstName
 //        supportActionBar?.subtitle = person.profession
 
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(HomeFragment(), "Home")
-        adapter.addFragment(AboutFragment(), "About")
         adapter.addFragment(LearnFragment(), "Learn")
         adapter.addFragment(ForumFragment(), "Forum")
+        adapter.addFragment(AboutFragment(), "About")
 
         viewPager.adapter = adapter
 
@@ -47,11 +40,8 @@ class MainActivity : AppCompatActivity() {
         // startActivity(Intent(applicationContext, LoginActivity::class.java))
 //        navController = this.findNavController(R.id.fragment)
 //        NavigationUI.setupActionBarWithNavController(this, navController)
-
-        // if(spf !isOnboardSeen) {
-        // startActivity(Intent(applicationContext, OnboardingActivity::class.java))}
-        //
     }
-
-
+//    override fun onSupportNavigateUp(): Boolean {
+//        return navController.navigateUp()
+//    }
 }

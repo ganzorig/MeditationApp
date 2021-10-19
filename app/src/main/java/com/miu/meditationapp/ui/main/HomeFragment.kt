@@ -26,9 +26,9 @@ class HomeFragment : Fragment() {
             startActivity(Intent(context, BreathActivity::class.java))
         }
 
-        view.onboard.setOnClickListener {
-            startActivity(Intent(context, OnboardingActivity::class.java))
-        }
+//        view.onboard.setOnClickListener {
+//            startActivity(Intent(context, OnboardingActivity::class.java))
+//        }
 
         return view
     }

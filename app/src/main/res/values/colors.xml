@@ -11,21 +11,25 @@
     <color name="beige_100">#FFf7d8cc</color>
     <color name="orange_500">#FFFF9F9E</color>
     <color name="orange_300">#FFFDBE6A</color>
+    <!--    green-->
     <color name="green_200">#FFC7E1DE</color>
     <color name="green_500">#FF8AA771</color>
     <color name="green_505">#558AA771</color>
     <color name="green_700">#FF60794a</color>
     <color name="green_705">#99496E81</color>
+    <color name="green_800">#FF404F49</color>
+    <!--    yellow-->
     <color name="yellow_200">#FFFFFADD</color>
     <color name="yellow_500">#FFFFEF95</color>
+    <!--    gray-->
     <color name="gray_100">#FFf8faf8</color>
     <color name="gray_300">#FF808182</color>
+    <!--    blue-->
     <color name="light_blue_600">#FF039BE5</color>
     <color name="light_blue_900">#FF01579B</color>
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
-
     <!--Custom Colors-->
     <color name="custom_color_primary">#643AE7</color>
     <color name="custom_color_secondary">#FF8F00</color>
