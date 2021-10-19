@@ -9,7 +9,7 @@ import com.miu.meditationapp.ui.main.LearnFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-//    lateinit var navController: NavController
+    //    lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

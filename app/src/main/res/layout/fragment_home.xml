@@ -130,7 +130,6 @@
                     android:layout_gravity="right"/>
             </com.google.android.material.card.MaterialCardView>
 
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/remind"
                 android:layout_width="140dp"
@@ -143,6 +142,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:backgroundTint="@color/orange_300"
                 android:text="Set Reminder" />
+
         </LinearLayout>
 
     </ScrollView>

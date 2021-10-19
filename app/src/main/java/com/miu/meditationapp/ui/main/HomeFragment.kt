@@ -13,6 +13,7 @@ import android.widget.Toast
 import com.miu.meditationapp.BreathActivity
 import com.miu.meditationapp.MainActivity
 import com.miu.meditationapp.MeditationActivity
+import com.miu.meditationapp.OnboardingActivity
 import com.miu.meditationapp.R
 import com.miu.meditationapp.helper.NotificationReceiver
 import kotlinx.android.synthetic.main.fragment_home.view.*
@@ -32,6 +33,7 @@ class HomeFragment : Fragment() {
             startActivity(Intent(context, BreathActivity::class.java))
         }
 
+
         view.remind.setOnClickListener {
             var calendar: Calendar = Calendar.getInstance()
 
@@ -48,6 +50,11 @@ class HomeFragment : Fragment() {
 
             Toast.makeText(context, "Set alarm", Toast.LENGTH_SHORT).show()
         }
+
+//        view.onboard.setOnClickListener {
+//            startActivity(Intent(context, OnboardingActivity::class.java))
+//        }
+
 
         return view
     }
