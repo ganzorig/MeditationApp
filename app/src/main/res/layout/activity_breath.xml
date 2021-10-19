@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BreathActivity"
-    android:background="@color/green_700">
+    android:background="@color/green_800">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/breatheView"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/breath"
+        app:lottie_rawRes="@raw/breathe"
         tools:ignore="MissingConstraints"
         android:visibility="gone"/>
     <com.airbnb.lottie.LottieAnimationView

@@ -14,41 +14,47 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:background="@drawable/background">
-
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
 
         <ImageButton
             android:id="@+id/sound"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_gravity="left|bottom"
-            android:layout_margin="24dp"
+            android:layout_margin="16dp"
             android:background="@color/transparent"
             android:scaleType="centerInside"
-            app:srcCompat="@drawable/sound"
-            tools:layout_editor_absoluteX="24dp"
-            tools:layout_editor_absoluteY="677dp" />
+            app:layout_constraintBottom_toBottomOf="@+id/spinner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/spinner"
+            app:srcCompat="@drawable/sound" />
 
         <Spinner
             android:id="@+id/spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/backround"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/speech"
+            app:layout_constraintStart_toEndOf="@+id/sound"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/speech"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_gravity="right|bottom"
-            android:layout_margin="24dp"
+            android:layout_margin="16dp"
             android:background="@color/transparent"
             android:scaleType="centerInside"
-            app:srcCompat="@drawable/speech"
-            tools:layout_editor_absoluteX="357dp"
-            tools:layout_editor_absoluteY="677dp" />
+            app:layout_constraintBottom_toBottomOf="@+id/spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/spinner"
+            app:srcCompat="@drawable/speech" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageButton
@@ -101,11 +107,12 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/start"
             android:layout_width="140dp"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:layout_weight="1"
             android:textAllCaps="false"
             app:cornerRadius="20dp"
             android:layout_margin="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:backgroundTint="@color/orange_300"
             android:text="@string/str_start" />
 

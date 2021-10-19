@@ -84,11 +84,11 @@
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/mode"
-                    android:layout_gravity="right"
-                    android:paddingRight="16dp"/>
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/med3"
+                    android:scaleType="fitEnd"
+                    android:layout_gravity="right"/>
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -123,11 +123,11 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/mode"
-                    android:layout_gravity="right"
-                    android:paddingRight="16dp"/>
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/med1"
+                    android:scaleType="fitEnd"
+                    android:layout_gravity="right"/>
             </com.google.android.material.card.MaterialCardView>
 
  \
