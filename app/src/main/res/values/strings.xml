@@ -1,4 +1,5 @@
 <resources>
+    <string name="skip">Skip</string>
     <string name="app_name">GENO</string>
     <string name="str_start">Start</string>
     <string name="str_end">End</string>

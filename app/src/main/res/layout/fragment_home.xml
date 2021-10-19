@@ -130,7 +130,7 @@
                     android:layout_gravity="right"/>
             </com.google.android.material.card.MaterialCardView>
 
- \
+
         </LinearLayout>
 
     </ScrollView>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.miu.meditationapp">
+package="com.miu.meditationapp">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,6 +16,9 @@
         <activity
             android:name=".LoginAddUser"
             android:exported="true" />
+        <activity
+            android:name=".OnboardingActivity"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
