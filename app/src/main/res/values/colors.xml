@@ -7,7 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
     <color name="beige_100">#FFf7d8cc</color>
+
     <color name="orange_500">#FFFF9F9E</color>
     <color name="orange_300">#FFFDBE6A</color>
     <!--    green-->
@@ -29,5 +31,14 @@
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
+    <!--Custom Colors-->
+    <color name="custom_color_primary">#643AE7</color>
+    <color name="custom_color_secondary">#FF8F00</color>
+    <color name="custom_color_secondary_light">#FFD299</color>
+    <color name="custom_color_background">#FFFFFF</color>
+    <color name="custom_color_text_primary">#060906</color>
+    <color name="custom_color_text_secondary">#464747</color>
+    <color name="our_color">#F9A826</color>
+    <color name="additional_color">#58B19F</color>
     <color name="transparent">#00000000</color>
 </resources>

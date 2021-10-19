@@ -96,6 +96,7 @@ class MeditationActivity : AppCompatActivity() {
             mediaPlayer.stop()
             mediaPlayer.release()
         }
+        timer.cancel()
     }
 
     override fun onBackPressed() {
@@ -109,7 +110,7 @@ class MeditationActivity : AppCompatActivity() {
                 minutes = TimeUnit.MILLISECONDS.toMinutes(ms) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(ms))
                 sec = TimeUnit.MILLISECONDS.toSeconds(ms) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(ms))
 
-                if((minutes == 19L || minutes == 0L) && sec == 55L) {
+                if((minutes == 19L || minutes == 9L) && sec == 55L) {
                     tts = TextToSpeech(applicationContext, TextToSpeech.OnInitListener {
                         if(it == TextToSpeech.SUCCESS) {
                             tts.language = Locale.US
