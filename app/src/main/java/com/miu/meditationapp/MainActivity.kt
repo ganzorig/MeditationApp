@@ -2,6 +2,7 @@ package com.miu.meditationapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.viewpager.widget.ViewPager
 import com.miu.meditationapp.ui.main.AboutFragment
 import com.miu.meditationapp.ui.main.HomeFragment
 import com.miu.meditationapp.ui.main.ForumFragment
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         adapter.addFragment(AboutFragment(), "About")
 
         viewPager.adapter = adapter
+
 
         tabs.setupWithViewPager(viewPager)
 
