@@ -1,20 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.main.AboutFragment">
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingLeft="24dp"
-        android:paddingRight="24dp"
-        android:paddingBottom="24dp"
-        android:paddingTop="8dp">
+        android:layout_height="match_parent">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="24dp">
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#fafa9e"
+                app:cardCornerRadius="260dp">
 
-    </LinearLayout>
-</ScrollView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="260dp">
+
+                    <ImageView
+                        android:id="@+id/avatar"
+                        android:layout_width="180dp"
+                        android:layout_height="180dp"
+                        android:background="#fdfdcf"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_communi" />
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Hi there,"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="To find yourself, think for yourself"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="32dp"/>
+            <CalendarView
+                android:id="@+id/cal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
