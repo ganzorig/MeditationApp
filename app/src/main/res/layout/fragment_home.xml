@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.main.HomeFragment">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/breatheView"
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:layout_marginRight="-125dp"
+        android:layout_marginTop="-10dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/leaf"
+        android:layout_gravity="right|top"
+        tools:ignore="MissingConstraints"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -15,17 +27,124 @@
             android:orientation="vertical"
             android:padding="24dp">
 
-            <Button
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/good_morning"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:text="Ganzorig"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:text="@string/quote"
+                android:paddingRight="100dp"
+                android:lineHeight="30dp"
+                android:layout_marginBottom="16dp"/>
+
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/button"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_height="120dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:checkable="true"
+                app:cardCornerRadius="16dp"
+                android:backgroundTint="@color/green_200"
+                android:outlineAmbientShadowColor="@color/green_700"
+                android:layout_marginBottom="16dp">
 
-            <Button
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Start Meditating"
+                        android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textAppearance="?attr/textAppearanceBody1" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/med3"
+                    android:scaleType="fitEnd"
+                    android:layout_gravity="right"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/breathe"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Breathe exercise" />
+                android:layout_height="120dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:checkable="true"
+                app:cardCornerRadius="16dp"
+                android:backgroundTint="@color/beige_100"
+                android:outlineAmbientShadowColor="@color/green_700"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Breathe exercise"
+                        android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textAppearance="?attr/textAppearanceBody1" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/med1"
+                    android:scaleType="fitEnd"
+                    android:layout_gravity="right"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/remind"
+                android:layout_width="140dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                app:cornerRadius="20dp"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:backgroundTint="@color/orange_300"
+                android:text="Set Reminder" />
+
         </LinearLayout>
+
     </ScrollView>
+
 </FrameLayout>

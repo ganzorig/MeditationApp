@@ -9,7 +9,7 @@ import com.miu.meditationapp.ui.main.LearnFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-//    lateinit var navController: NavController
+    //    lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -19,9 +19,9 @@ class MainActivity : AppCompatActivity() {
 
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(HomeFragment(), "Home")
-        adapter.addFragment(AboutFragment(), "About")
         adapter.addFragment(LearnFragment(), "Learn")
         adapter.addFragment(ForumFragment(), "Forum")
+        adapter.addFragment(AboutFragment(), "About")
 
         viewPager.adapter = adapter
 
