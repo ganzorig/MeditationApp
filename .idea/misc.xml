@@ -3,12 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-<<<<<<< HEAD
         <entry key="app/src/main/res/drawable/backround.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/drawable/button_back.xml" value="0.29384615384615387" />
         <entry key="app/src/main/res/font/avenir.xml" value="0.3076923076923077" />
         <entry key="app/src/main/res/layout/activity_breath.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.13240740740740742" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14895833333333333" />
         <entry key="app/src/main/res/layout/activity_meditation.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_onboarding.xml" value="0.28229166666666666" />
@@ -18,23 +17,6 @@
         <entry key="app/src/main/res/layout/fragment_learn.xml" value="0.27794871794871795" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.13240740740740742" />
         <entry key="app/src/main/res/layout/onbaording_item_container.xml" value="0.28229166666666666" />
-=======
-        <entry key="app/src/main/res/drawable/icon_background.xml" value="0.3921875" />
-        <entry key="app/src/main/res/drawable/icon_outer_background.xml" value="0.3921875" />
-        <entry key="app/src/main/res/drawable/indicator_active_background.xml" value="0.228125" />
-        <entry key="app/src/main/res/drawable/indicator_inactive_backgound.xml" value="0.228125" />
-        <entry key="app/src/main/res/drawable/view_pager_background.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_breath.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_meditation.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_onboarding.xml" value="0.25104166666666666" />
-        <entry key="app/src/main/res/layout/fragment_about.xml" value="0.25104166666666666" />
-        <entry key="app/src/main/res/layout/fragment_forum.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/main_activity.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/onbaording_item_container.xml" value="0.25" />
->>>>>>> 724ac66966b4d393ade9b189bace5cd76309e54c
       </map>
     </option>
   </component>

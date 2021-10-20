@@ -27,11 +27,11 @@ class NotificationReceiver: BroadcastReceiver() {
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setAutoCancel(true)
 
-
-        with(NotificationManagerCompat.from(context)) {
-            // notificationId is a unique int for each notification that you must define
-            notificationManager.notify(100,builder.build())
-        }
+        notificationManager.notify(100,builder.build())
+//        with(NotificationManagerCompat.from(context)) {
+//            // notificationId is a unique int for each notification that you must define
+//            notificationManager.notify(100,builder.build())
+//        }
     }
 
 }

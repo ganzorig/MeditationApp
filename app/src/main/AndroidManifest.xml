@@ -46,6 +46,7 @@ package="com.miu.meditationapp">
             android:exported="true">
         </activity>
         <receiver android:name=".helper.NotificationReceiver" />
+
     </application>
 
 </manifest>
