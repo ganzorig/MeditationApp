@@ -7,7 +7,7 @@
 
 
     <shape
-        android:innerRadius="3dp"
+        android:innerRadius="20dp"
         android:shape="ring"
         android:thicknessRatio="10"
         android:useLevel="false">

@@ -11,6 +11,7 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.*
+import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -25,11 +26,11 @@ class LoginAddUser  : AppCompatActivity() {
         val TAG = "RegisterActivity"
     }
 
-    lateinit var firstNameEdt: EditText
-    lateinit var lastNameEdt: EditText
-    lateinit var emailEdt: EditText
-    lateinit var passwordEdt: EditText
-    lateinit var cpasswordEdt: EditText
+    lateinit var firstNameEdt: TextInputEditText
+    lateinit var lastNameEdt: TextInputEditText
+    lateinit var emailEdt: TextInputEditText
+    lateinit var passwordEdt: TextInputEditText
+    lateinit var cpasswordEdt: TextInputEditText
     lateinit var loginTV: TextView
     lateinit var createuserBtn: Button
     lateinit var loadingPB: ProgressBar
@@ -52,7 +53,6 @@ class LoginAddUser  : AppCompatActivity() {
             startActivity(i)
         }
         createuserBtn.setOnClickListener() {
-            loadingPB.visibility = View.VISIBLE
             val fname:String = firstNameEdt.text.toString()
             val lname:String = lastNameEdt.text.toString()
             val email:String = emailEdt.text.toString()
@@ -60,20 +60,21 @@ class LoginAddUser  : AppCompatActivity() {
             val cpwd:String = cpasswordEdt.text.toString()
 
             if(!pwd.equals(cpwd)) {
-                Toast.makeText(this, "Please check both password", Toast.LENGTH_SHORT)
-            } else if(TextUtils.isEmpty(fname) && TextUtils.isEmpty(lname) && TextUtils.isEmpty(email) && TextUtils.isEmpty(pwd) && TextUtils.isEmpty(cpwd)) {
-                Toast.makeText(this, "Please add fully information..", Toast.LENGTH_SHORT)
+                Toast.makeText(this, "Please check both password", Toast.LENGTH_SHORT).show()
+            } else if(TextUtils.isEmpty(fname) || TextUtils.isEmpty(lname) || TextUtils.isEmpty(email) || TextUtils.isEmpty(pwd) || TextUtils.isEmpty(cpwd)) {
+                Toast.makeText(this, "Please add fully information..", Toast.LENGTH_SHORT).show()
             } else {
+                loadingPB.visibility = View.VISIBLE
                 mAuth.createUserWithEmailAndPassword(email,pwd).addOnCompleteListener(this) { task ->
                      if(task.isSuccessful) {
                          loadingPB.visibility = View.GONE
-                         Toast.makeText(this, "User Created...", Toast.LENGTH_SHORT)
+                         Toast.makeText(this, "User Created...", Toast.LENGTH_SHORT).show()
                          uploadImageToFirebaseStorage()
                          startActivity(Intent(this, LoginActivity::class.java))
                          finish()
                      } else {
                          loadingPB.visibility = View.GONE
-                         Toast.makeText(this, "Fail to create user...", Toast.LENGTH_SHORT)
+                         Toast.makeText(this, "Fail to create user...", Toast.LENGTH_SHORT).show()
                      }
                 }
             }
