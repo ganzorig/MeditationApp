@@ -33,8 +33,6 @@ class MyAdapter (
         holder.itemView.imageRecyclerView.setImageResource(videosList[position].image)
         holder.itemView.textRecyclerView1.text = "${videosList[position].title}"
         holder.itemView.textRecyclerView3.text = "Duration: ${videosList[position].duration}"
-
-
     }
 
     override fun getItemCount(): Int {

@@ -17,7 +17,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
@@ -25,13 +24,13 @@
                 android:layout_height="100dp"
                 app:cardCornerRadius="15dp"
                 android:layout_gravity="center"
-                android:layout_marginRight="15dp">
+                android:layout_marginVertical="8dp"
+                android:layout_marginHorizontal="16dp">
 
                 <ImageView
                     android:id="@+id/imageRecyclerView"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-
                     android:scaleType="centerCrop"
                     tools:srcCompat="@tools:sample/avatars" />
             </androidx.cardview.widget.CardView>
@@ -44,10 +43,10 @@
 
                 <TextView
                     android:id="@+id/textRecyclerView1"
-                    android:fontFamily="@font/avenir_bold"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:lineHeight="24sp"
                     android:text="TextView"
                     android:padding="5dp"/>
 
