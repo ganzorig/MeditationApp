@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Miu/WAP/Github/MeditationApp/app/src/main/res/layout/activity_meditation.xml" value="0.25416666666666665" />
+        <entry key="..\:/Miu/WAP/Github/MeditationApp/app/src/main/res/layout/activity_video.xml" value="0.264" />
+        <entry key="..\:/Miu/WAP/Github/MeditationApp/app/src/main/res/layout/activity_videos_list.xml" value="0.4099722991689751" />
+        <entry key="..\:/Miu/WAP/Github/MeditationApp/app/src/main/res/layout/fragment_learn.xml" value="0.176" />
         <entry key="app/src/main/res/drawable/icon_background.xml" value="0.3921875" />
         <entry key="app/src/main/res/drawable/icon_outer_background.xml" value="0.3921875" />
         <entry key="app/src/main/res/drawable/indicator_active_background.xml" value="0.228125" />
