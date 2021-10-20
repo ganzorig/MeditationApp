@@ -2,7 +2,6 @@ package com.miu.meditationapp
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,7 +20,6 @@ import java.util.*
 
 
 class LoginAddUser  : AppCompatActivity() {
-
     companion object {
         val TAG = "RegisterActivity"
     }

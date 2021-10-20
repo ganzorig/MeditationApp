@@ -13,10 +13,12 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14895833333333333" />
         <entry key="app/src/main/res/layout/activity_meditation.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_onboarding.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/activity_video.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/activity_videos_list.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/fragment_about.xml" value="0.13240740740740742" />
         <entry key="app/src/main/res/layout/fragment_forum.xml" value="0.13240740740740742" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_learn.xml" value="0.27794871794871795" />
+        <entry key="app/src/main/res/layout/fragment_learn.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.13240740740740742" />
         <entry key="app/src/main/res/layout/onbaording_item_container.xml" value="0.28229166666666666" />
       </map>

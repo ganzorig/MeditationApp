@@ -18,6 +18,9 @@ package="com.miu.meditationapp">
             android:name=".LoginAddUser"
             android:exported="true" />
         <activity
+            android:name=".ui.main.VideosView"
+            android:exported="true" />
+        <activity
             android:name=".OnboardingActivity"
             android:exported="false" />
         <activity
