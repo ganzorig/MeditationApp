@@ -25,5 +25,5 @@
     <string name="lbl_login_password">Password:</string>
     <string name="btn_login">Log In</string>
     <string name="idTVLogin">Already a User ? Login Here</string>
-    <string name="registerTV">Sign Up! Click Here</string>
+    <string name="registerTV">Sign Up! Click here</string>
 </resources>

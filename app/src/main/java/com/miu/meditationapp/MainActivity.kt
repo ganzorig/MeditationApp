@@ -2,6 +2,7 @@ package com.miu.meditationapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.viewpager.widget.ViewPager
 import com.miu.meditationapp.ui.main.AboutFragment
 import com.miu.meditationapp.ui.main.HomeFragment
 import com.miu.meditationapp.ui.main.ForumFragment
@@ -14,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        supportActionBar?.title = person.firstName
+        //supportActionBar?.hide()
 //        supportActionBar?.subtitle = person.profession
 
         val adapter = ViewPagerAdapter(supportFragmentManager)
@@ -25,12 +26,14 @@ class MainActivity : AppCompatActivity() {
 
         viewPager.adapter = adapter
 
+
         tabs.setupWithViewPager(viewPager)
 
         tabs.getTabAt(0)!!.setIcon(R.drawable.home)
         tabs.getTabAt(1)!!.setIcon(R.drawable.about)
         tabs.getTabAt(2)!!.setIcon(R.drawable.work)
         tabs.getTabAt(3)!!.setIcon(R.drawable.contact)
+
 //        if (savedInstanceState == null) {
 //            supportFragmentManager.beginTransaction()
 //                .replace(R.id.container, MainFragment.newInstance())

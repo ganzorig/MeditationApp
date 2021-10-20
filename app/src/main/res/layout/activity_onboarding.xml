@@ -17,10 +17,9 @@ android:background="@color/additional_color">
     app:layout_constraintBottom_toTopOf="@+id/viewCenterOfNext"
     app:layout_constraintTop_toTopOf="parent" />
 
-
     <LinearLayout
         android:id="@+id/indicatorsContainer"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
@@ -30,52 +29,51 @@ android:background="@color/additional_color">
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
-    android:layout_width="55dp"
-    android:layout_height="55dp"
-    android:background="@drawable/icon_outer_background"
-    app:layout_constraintBottom_toBottomOf="@+id/imageNext"
-    app:layout_constraintEnd_toEndOf="@+id/imageNext"
-    app:layout_constraintStart_toStartOf="@+id/imageNext"
-    app:layout_constraintTop_toTopOf="@+id/imageNext" />
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="@drawable/icon_outer_background"
+        app:layout_constraintBottom_toBottomOf="@+id/imageNext"
+        app:layout_constraintEnd_toEndOf="@+id/imageNext"
+        app:layout_constraintStart_toStartOf="@+id/imageNext"
+        app:layout_constraintTop_toTopOf="@+id/imageNext" />
 
-<View
-    android:id="@+id/viewCenterOfNext"
-    android:layout_width="1dp"
-    android:layout_height="1dp"
-    app:layout_constraintBottom_toBottomOf="@+id/imageNext"
-    app:layout_constraintEnd_toEndOf="@+id/imageNext"
-    app:layout_constraintStart_toStartOf="@+id/imageNext"
-    app:layout_constraintBottom_toTopOf="@+id/imageNext"/>
+    <View
+        android:id="@+id/viewCenterOfNext"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageNext"
+        app:layout_constraintEnd_toEndOf="@+id/imageNext"
+        app:layout_constraintStart_toStartOf="@+id/imageNext"
+        app:layout_constraintBottom_toTopOf="@+id/imageNext"/>
 
-<ImageView
-    android:id="@+id/imageNext"
-    android:layout_width="45dp"
-    android:layout_height="45dp"
-    android:layout_marginBottom="50dp"
-    android:contentDescription="@string/app_name"
-    android:background="@drawable/icon_background"
-    android:src="@drawable/ic_right"
-    app:layout_constraintBottom_toTopOf="@+id/buttonGetStarted"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:tint="@color/custom_color_background" />
+    <ImageView
+        android:id="@+id/imageNext"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="50dp"
+        android:contentDescription="@string/app_name"
+        android:background="@drawable/icon_background"
+        android:src="@drawable/ic_right"
+        app:layout_constraintBottom_toTopOf="@+id/buttonGetStarted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/custom_color_background" />
 
-<com.google.android.material.button.MaterialButton
-    android:id="@+id/buttonGetStarted"
-    android:layout_width="wrap_content"
-    android:layout_height="50dp"
-    android:layout_marginBottom="50dp"
-    android:paddingStart="40dp"
-    android:paddingEnd="40dp"
-    android:text="Get Started"
-    android:textAllCaps="false"
-    android:textSize="14sp"
-    android:textStyle="bold"
-    android:backgroundTint="@color/custom_color_secondary"
-    app:cornerRadius="20dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"></com.google.android.material.button.MaterialButton>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonGetStarted"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginBottom="50dp"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:text="Get Started"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:backgroundTint="@color/custom_color_secondary"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></com.google.android.material.button.MaterialButton>
 
     <TextView
         android:id="@+id/textSkip"
@@ -89,6 +87,5 @@ android:background="@color/additional_color">
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginRight="20dp"
         app:layout_constraintBottom_toBottomOf="parent"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
