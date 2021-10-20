@@ -20,7 +20,8 @@
                 android:layout_width="190dp"
                 android:layout_height="190dp"
                 android:layout_gravity="center"
-                app:cardBackgroundColor="#fafa9e"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/orange_300"
                 app:cardCornerRadius="260dp">
 
                 <androidx.cardview.widget.CardView
@@ -33,7 +34,7 @@
                         android:id="@+id/avatar"
                         android:layout_width="180dp"
                         android:layout_height="180dp"
-                        android:background="#fdfdcf"
+                        android:background="@color/beige_100"
                         android:scaleType="centerCrop"
                         android:src="@drawable/img_communi" />
 
@@ -58,8 +59,9 @@
                 android:text="To find yourself, think for yourself"
                 android:paddingLeft="24dp"
                 android:paddingRight="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="32dp"/>
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"/>
             <CalendarView
                 android:id="@+id/cal"
                 android:layout_width="match_parent"
@@ -72,10 +74,10 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:textAllCaps="false"
-                app:cornerRadius="20dp"
+                app:cornerRadius="24dp"
                 android:layout_margin="8dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:backgroundTint="@color/orange_300"
+                android:backgroundTint="@color/green_500"
                 android:text="Logout" />
         </LinearLayout>
     </ScrollView>

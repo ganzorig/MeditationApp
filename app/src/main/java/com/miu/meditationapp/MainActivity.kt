@@ -30,9 +30,9 @@ class MainActivity : AppCompatActivity() {
         tabs.setupWithViewPager(viewPager)
 
         tabs.getTabAt(0)!!.setIcon(R.drawable.home)
-        tabs.getTabAt(1)!!.setIcon(R.drawable.about)
-        tabs.getTabAt(2)!!.setIcon(R.drawable.work)
-        tabs.getTabAt(3)!!.setIcon(R.drawable.contact)
+        tabs.getTabAt(1)!!.setIcon(R.drawable.learn)
+        tabs.getTabAt(2)!!.setIcon(R.drawable.forum)
+        tabs.getTabAt(3)!!.setIcon(R.drawable.about)
 
 //        if (savedInstanceState == null) {
 //            supportFragmentManager.beginTransaction()

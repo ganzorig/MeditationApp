@@ -11,13 +11,13 @@ import com.miu.meditationapp.MainActivity
 import com.miu.meditationapp.MeditationActivity
 
 class NotificationReceiver: BroadcastReceiver() {
-    override fun onReceive(context: Context?, intent: Intent?) {
-        var notificationManager = context?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+    override fun onReceive(context: Context, intent: Intent?) {
+
 
         var repeatingIntent = Intent(context, MeditationActivity::class.java)
         repeatingIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
 
-        var pendingIntent: PendingIntent = PendingIntent.getActivity(context, 100, repeatingIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+        var pendingIntent: PendingIntent = PendingIntent.getActivity(context, 200, repeatingIntent, PendingIntent.FLAG_UPDATE_CURRENT)
 
         var builder: NotificationCompat.Builder = NotificationCompat.Builder(context, "MORNING")
             .setContentIntent(pendingIntent)
@@ -27,7 +27,9 @@ class NotificationReceiver: BroadcastReceiver() {
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setAutoCancel(true)
 
-        notificationManager.notify(100,builder.build())
+        var notificationManager = NotificationManagerCompat.from(context)
+
+        notificationManager.notify(200, builder.build())
 //        with(NotificationManagerCompat.from(context)) {
 //            // notificationId is a unique int for each notification that you must define
 //            notificationManager.notify(100,builder.build())

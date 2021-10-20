@@ -82,7 +82,7 @@
             android:layout_gravity="center"
             android:layout_margin="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:backgroundTint="@color/orange_300"
+            android:backgroundTint="@color/green_700"
             android:text="@string/str_start" />
 
     </LinearLayout>
