@@ -35,6 +35,7 @@
                         android:layout_height="180dp"
                         android:background="#fdfdcf"
                         android:scaleType="centerCrop"
+
                         android:src="@drawable/img_communi" />
 
                 </androidx.cardview.widget.CardView>

@@ -61,7 +61,7 @@ class HomeFragment : Fragment() {
                 Toast.makeText(context, "User doesn't exist.", Toast.LENGTH_SHORT).show()
             }
         }.addOnFailureListener {
-            Toast.makeText(context, "User doesn't exist.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Fail!!! User doesn't exist.", Toast.LENGTH_SHORT).show()
         }
 
         currentUser = FirebaseAuth.getInstance().currentUser!!
