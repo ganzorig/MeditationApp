@@ -42,16 +42,16 @@ class LoginActivity : AppCompatActivity() {
             val email:String = email.text.toString()
             val pwd:String = pwd.text.toString()
             if (TextUtils.isEmpty(email) && TextUtils.isEmpty(pwd)) {
-                Toast.makeText(this, "Please enter your credentials/", Toast.LENGTH_SHORT)
+                Toast.makeText(this, "Please enter your credentials/", Toast.LENGTH_SHORT).show()
             } else {
                 mAuth.signInWithEmailAndPassword(email, pwd).addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         loadingPB.visibility = View.GONE
-                        Toast.makeText(this, "Login Successful..", Toast.LENGTH_SHORT)
+                        Toast.makeText(this, "Login Successful..", Toast.LENGTH_SHORT).show()
                         startMainActivity()
                     } else {
                         loadingPB.visibility = View.GONE
-                        Toast.makeText(this, "Email or Password is wrong. Please try again.", Toast.LENGTH_SHORT)
+                        Toast.makeText(this, "Email or Password is wrong. Please try again.", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
