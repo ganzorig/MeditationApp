@@ -7,23 +7,33 @@
     tools:context=".messages.LatestMessagesActivity">
 
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/recyclerview_latest_messages" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_latest_messages"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <ImageButton
+            android:id="@+id/forum1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/learn" />
+
+        <ImageButton
+            android:id="@+id/forum2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/learn" />
+
+        <Button
+            android:id="@+id/btn_createforumroom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Room" />
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
