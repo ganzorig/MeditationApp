@@ -15,12 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MeditationApp">
         <activity
-            android:name=".ForumNewPost"
-            android:exported="true" />
-        <activity
-            android:name=".ForumBody"
-            android:exported="true" />
-        <activity
             android:name=".LoginAddUser"
             android:exported="true" />
         <activity
@@ -39,9 +33,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MeditationForum"
-            android:exported="true" />
-        <activity
             android:name=".BreathActivity"
             android:exported="false" />
         <activity
@@ -53,19 +44,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-        <activity
-            android:name=".messages.LatestMessagesActivity"
-            android:exported="true" />
-        <activity android:name=".messages.NewMessageActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".messages.LatestMessagesActivity" />
-        </activity>
-        <activity android:name=".messages.ChatLogActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".messages.LatestMessagesActivity" />
-        </activity>
 
         <receiver android:name=".helper.NotificationReceiver" />
     </application>

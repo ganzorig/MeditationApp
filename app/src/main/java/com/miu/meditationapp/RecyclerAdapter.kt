@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.miu.meditationapp.models.PostHistory
 
 class RecyclerAdapter(var context: Context, items: List<PostHistory>) :
     RecyclerView.Adapter<RecyclerAdapter.ViewHolder?>() {
