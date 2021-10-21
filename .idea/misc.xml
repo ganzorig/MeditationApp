@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/drawable/progress_bar.xml" value="0.28177083333333336" />
         <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/drawable/rounded_button.xml" value="0.28177083333333336" />
         <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/activity_breath.xml" value="0.265625" />
@@ -21,10 +22,31 @@
         <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/main_activity.xml" value="0.265625" />
         <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/user_row_new_message.xml" value="0.265625" />
         <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/menu/nav_menu.xml" value="0.1375" />
+=======
+        <entry key="app/src/main/res/drawable/backround.xml" value="0.16510416666666666" />
+        <entry key="app/src/main/res/drawable/button_back.xml" value="0.29384615384615387" />
+        <entry key="app/src/main/res/drawable/progress_bar.xml" value="0.25462962962962965" />
+        <entry key="app/src/main/res/font/avenir.xml" value="0.3076923076923077" />
+        <entry key="app/src/main/res/layout/activity_breath.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_login_add_user.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/layout/activity_meditation.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_new_message.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/layout/activity_onboarding.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/activity_video.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/activity_videos_list.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/fragment_about.xml" value="0.13240740740740742" />
+        <entry key="app/src/main/res/layout/fragment_forum.xml" value="0.13240740740740742" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_learn.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.13240740740740742" />
+        <entry key="app/src/main/res/layout/onbaording_item_container.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/report.xml" value="0.28229166666666666" />
+>>>>>>> 86e55d967fd2e9d3e407c507da07bcc0b9b8c1c4
       </map>
     </option>
   </component>
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
