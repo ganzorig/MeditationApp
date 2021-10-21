@@ -13,7 +13,11 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.miu.meditationapp.databinding.ActivityMeditationBinding
+import com.miu.meditationapp.ui.main.HomeViewModel
 import kotlinx.android.synthetic.main.activity_meditation.*
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -25,9 +29,13 @@ class MeditationActivity : AppCompatActivity() {
     private lateinit var tts: TextToSpeech
     private lateinit var values : Array<String>
     private var minutes = 20L
+    private var startMin = 20L
     private lateinit var textIndicator:TextView
     private lateinit var timer: CountDownTimer
     private var isVoiceEnabled: Boolean = true
+    private lateinit var viewModel: HomeViewModel
+    lateinit var currentUser: FirebaseUser
+    private var isRunning: Boolean = false
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,15 +46,20 @@ class MeditationActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         isFullscreen = true
 
+        currentUser = FirebaseAuth.getInstance().currentUser!!
+        val uid = FirebaseAuth.getInstance().uid
+        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        viewModel.init(applicationContext, uid!!)
+
         textIndicator = indicator
 
         values = resources.getStringArray(R.array.minutes);
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, values)
         spinner.adapter = adapter;
-
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 minutes = if(position == 0) 20L else 10L
+                startMin = minutes
                 textIndicator.text = "$minutes:00"
                 timer.cancel()
                 timer = createTimer()
@@ -78,7 +91,8 @@ class MeditationActivity : AppCompatActivity() {
             mediaPlayer.isLooping = true
             mediaPlayer.start()
             start.isClickable = false
-            start.text = getString(R.string.str_end)
+            start.text = "Started"
+            isRunning = true
         }
 
         sound.setOnClickListener {
@@ -99,6 +113,10 @@ class MeditationActivity : AppCompatActivity() {
             mediaPlayer.release()
         }
         timer.cancel()
+        if (isRunning) {
+            viewModel.updateMeditationMinutes((startMin - minutes).toInt())
+            viewModel.updateMeditationCount()
+        }
     }
 
     override fun onBackPressed() {
@@ -112,32 +130,36 @@ class MeditationActivity : AppCompatActivity() {
                 minutes = TimeUnit.MILLISECONDS.toMinutes(ms) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(ms))
                 sec = TimeUnit.MILLISECONDS.toSeconds(ms) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(ms))
 
-                if((minutes == 19L || minutes == 9L) && sec == 55L) {
-                    tts = TextToSpeech(applicationContext, TextToSpeech.OnInitListener {
-                        if(isVoiceEnabled && it == TextToSpeech.SUCCESS) {
-                            tts.language = Locale.US
-                            tts.setSpeechRate(0.8F)
-                            tts.speak("Close your eyes and sit comfortably", TextToSpeech.QUEUE_ADD, null)
-                        }
-                    })
+                if(((startMin == 10L && minutes == 9L) || minutes == 19L) && sec == 55L) {
+                    speak("Sit down and relaxing position and close your eyes")
                 }
 
-                if(minutes == 2L) {
-                    tts = TextToSpeech(applicationContext, TextToSpeech.OnInitListener {
-                        if(isVoiceEnabled && it == TextToSpeech.SUCCESS) {
-                            tts.language = Locale.US
-                            tts.setSpeechRate(0.8F)
-                            tts.speak("Stop thinking mantra, take two more minutes", TextToSpeech.QUEUE_ADD, null)
-                        }
-                    })
+                if(minutes == 2L && sec == 10L) {
+                    speak("Please keep your eyes closed and stop thinking mantra, take two more minutes")
+                }
+
+                if(minutes == 0L && sec == 10L) {
+                    speak("No you can open your eyes.")
                 }
                 textIndicator.text = "$minutes:$sec"
             }
 
             override fun onFinish() {
-                println("finish")
+                speak("Thank you for doing meditation with me. I hope your feeling great right now after doing this meditation")
+                viewModel.updateMeditationMinutes(20)
+                viewModel.updateMeditationCount()
             }
         }
+    }
+
+    fun speak(text: String) {
+        tts = TextToSpeech(applicationContext, TextToSpeech.OnInitListener {
+            if(isVoiceEnabled && it == TextToSpeech.SUCCESS) {
+                tts.language = Locale.US
+                tts.setSpeechRate(0.8F)
+                tts.speak(text, TextToSpeech.QUEUE_ADD, null)
+            }
+        })
     }
 
     private fun showDialog(context: Context){

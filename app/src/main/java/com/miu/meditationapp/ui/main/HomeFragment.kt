@@ -14,6 +14,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import com.google.firebase.auth.FirebaseAuth
@@ -34,14 +35,22 @@ class HomeFragment : Fragment() {
     private lateinit var calendar: Calendar
     private lateinit var picker: MaterialTimePicker
     private lateinit var database : DatabaseReference
+    private lateinit var viewModel: HomeViewModel
+    lateinit var pView: View
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+        pView = view
         calendar = Calendar.getInstance()
         createNotificationChannel()
 
         currentUser = FirebaseAuth.getInstance().currentUser!!
         val uid = FirebaseAuth.getInstance().uid
+
+        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        viewModel.init(requireContext(), uid!!)
+
+        updateReportTexts(view)
 
         database = FirebaseDatabase.getInstance().getReference("users")
         database.child(uid!!).get().addOnSuccessListener {
@@ -54,7 +63,6 @@ class HomeFragment : Fragment() {
             Toast.makeText(context, "Fail!!! User doesn't exist.", Toast.LENGTH_SHORT).show()
         }
 
-        currentUser = FirebaseAuth.getInstance().currentUser!!
         alarmManager = context?.getSystemService(ALARM_SERVICE) as AlarmManager
 
         view.button.setOnClickListener {
@@ -65,10 +73,9 @@ class HomeFragment : Fragment() {
             startActivity(Intent(context, BreathActivity::class.java))
         }
 
-        view.statusBar.progress = 45
+        updateReportProgress(view)
 
         view.remind.setOnClickListener {
-
             picker = MaterialTimePicker.Builder()
                 .setTimeFormat(TimeFormat.CLOCK_12H)
                 .setHour(12)
@@ -96,6 +103,35 @@ class HomeFragment : Fragment() {
         }
 
         return view
+    }
+
+    private fun updateReportTexts(view: View) {
+        view.val_meditate_times.text = viewModel.getMeditationCount().toString()
+        view.val_meditate.text = viewModel.getMeditationMin().toString()
+        view.val_breathe_times.text = viewModel.getBreatheCount().toString()
+        view.val_breathe.text = viewModel.getBreatheMin().toString()
+    }
+
+    private fun updateReportProgress(view: View) {
+        val medMin = viewModel.getMeditationMin()
+        val breMin = viewModel.getBreatheMin()
+        val medCount = viewModel.getMeditationCount()
+        val breCount = viewModel.getBreatheCount()
+        var percentage = 1
+        if(medCount > 0 || breCount > 0) {
+            percentage = (medMin + breMin) * 100 / (medCount * 20) + (breCount * 3)
+        }
+        view.statusBar.progress = percentage
+        view.val_meditate_times.text = medCount.toString()
+        view.val_meditate.text = medMin.toString()
+        view.val_breathe_times.text = breCount.toString()
+        view.val_breathe.text = breMin.toString()
+    }
+
+    override fun onResume() {
+        updateReportTexts(pView)
+        updateReportProgress(pView)
+        super.onResume()
     }
 
     fun createNotificationChannel() {

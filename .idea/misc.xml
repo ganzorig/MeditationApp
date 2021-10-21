@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.29384615384615387" />
         <entry key="app/src/main/res/drawable/backround.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/drawable/button_back.xml" value="0.29384615384615387" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.29384615384615387" />
+        <entry key="app/src/main/res/drawable/indicator_active_background.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/drawable/progress_bar.xml" value="0.25462962962962965" />
         <entry key="app/src/main/res/font/avenir.xml" value="0.3076923076923077" />
         <entry key="app/src/main/res/layout/activity_breath.xml" value="0.1" />
@@ -23,6 +26,8 @@
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.13240740740740742" />
         <entry key="app/src/main/res/layout/onbaording_item_container.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/report.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.29384615384615387" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.16510416666666666" />
       </map>
     </option>
   </component>

@@ -47,7 +47,7 @@
                     android:id="@+id/val_meditate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="54"
+                    android:text="-"
                     android:textStyle="bold"
                     android:textColor="@color/green_500"
                     android:textAppearance="?attr/textAppearanceHeadline6" />
@@ -87,7 +87,7 @@
                     android:id="@+id/val_meditate_times"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="8"
+                    android:text="-"
                     android:textColor="@color/light_blue_600"
                     android:textStyle="bold"
                     android:textAppearance="?attr/textAppearanceHeadline6" />
@@ -136,7 +136,7 @@
                     android:id="@+id/val_breathe"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="24"
+                    android:text="-"
                     android:textStyle="bold"
                     android:textColor="@color/orange_500"
                     android:textAppearance="?attr/textAppearanceHeadline6" />
@@ -175,7 +175,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="9"
+                    android:text="-"
                     android:id="@+id/val_breathe_times"
                     android:textStyle="bold"
                     android:textColor="@color/orange_300"

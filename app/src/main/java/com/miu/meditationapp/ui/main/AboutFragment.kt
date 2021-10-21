@@ -1,6 +1,8 @@
 package com.miu.meditationapp.ui.main
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,22 +18,10 @@ import kotlinx.android.synthetic.main.fragment_about.view.*
 import java.net.URL
 import java.util.*
 import android.widget.Toast
-
-import com.miu.meditationapp.MainActivity
-
 import com.google.firebase.database.DatabaseError
-
-import androidx.annotation.NonNull
-
 import com.squareup.picasso.Picasso
-
 import com.google.firebase.database.DataSnapshot
-
 import com.google.firebase.database.ValueEventListener
-
-
-
-
 
 class AboutFragment : Fragment() {
     private lateinit var viewModel: AboutViewModel
@@ -42,7 +32,6 @@ class AboutFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_about, container, false)
         viewModel = ViewModelProvider(this).get(AboutViewModel::class.java)
 
-//        view.name.text =
         viewModel.getFirstName()
         viewModel.liveFirstName
             .observe(viewLifecycleOwner, androidx.lifecycle.Observer {
@@ -73,9 +62,11 @@ class AboutFragment : Fragment() {
         view.logout.setOnClickListener {
             FirebaseAuth.getInstance().signOut();
             startActivity(Intent(context, LoginActivity::class.java))
+
+            var preferences: SharedPreferences? = context?.getSharedPreferences("ONBOARD", Context.MODE_PRIVATE)
+            preferences?.edit()?.remove("ISCOMPLETE")?.commit( );
             activity?.finish()
         }
-
         return view
     }
 }
