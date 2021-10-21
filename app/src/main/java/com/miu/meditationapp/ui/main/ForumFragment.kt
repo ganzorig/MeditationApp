@@ -50,7 +50,7 @@ class ForumFragment : Fragment() {
                     items.add(newFood)
                 }
                 adapter = activity?.let { RecyclerAdapter(it.applicationContext, items) }
-                adapter!!.notifyDataSetChanged()
+                adapter?.notifyDataSetChanged()
                 view.recyclerV?.adapter = adapter
             }
 
@@ -82,5 +82,6 @@ class ForumFragment : Fragment() {
             .addOnFailureListener {
                 Log.d(LoginAddUser.TAG, "Failed to set value to database: ${it.message}")
             }
+        view.edittext_chat.text.clear()
     }
 }

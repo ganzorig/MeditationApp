@@ -42,7 +42,6 @@ class AboutFragment : Fragment() {
         viewModel.liveProfilePicture
             .observe(viewLifecycleOwner, androidx.lifecycle.Observer {
                 var url = URL(it.toString())
-                println("IMAAAGE URL ..............$url")
                 val firebaseDatabase = FirebaseDatabase.getInstance()
                 val databaseReference: DatabaseReference = firebaseDatabase.getReference()
                 val getImage: DatabaseReference = databaseReference.child("profileImageUrl")

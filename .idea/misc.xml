@@ -9,6 +9,9 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.29384615384615387" />
         <entry key="app/src/main/res/drawable/indicator_active_background.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/drawable/progress_bar.xml" value="0.25462962962962965" />
+        <entry key="app/src/main/res/drawable/rounded_button.xml" value="0.29384615384615387" />
+        <entry key="app/src/main/res/drawable/rounded_edittext_register_login.xml" value="0.29384615384615387" />
+        <entry key="app/src/main/res/drawable/rounded_select_photo_button.xml" value="0.29384615384615387" />
         <entry key="app/src/main/res/font/avenir.xml" value="0.3076923076923077" />
         <entry key="app/src/main/res/layout/activity_breath.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_chat_log.xml" value="0.28229166666666666" />
