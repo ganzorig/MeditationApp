@@ -12,25 +12,22 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.miu.meditationapp.databinding.ActivityMeditationBinding
 import kotlinx.android.synthetic.main.activity_meditation.*
-import java.text.DecimalFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-
 class MeditationActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMeditationBinding
     private lateinit var mediaPlayer: MediaPlayer
     private var isFullscreen: Boolean = false
     private lateinit var tts: TextToSpeech
-    private lateinit var  values : Array<String>
+    private lateinit var values : Array<String>
     private var minutes = 20L
     private lateinit var textIndicator:TextView
     private lateinit var timer: CountDownTimer
+    private var isVoiceEnabled: Boolean = true
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,27 +51,32 @@ class MeditationActivity : AppCompatActivity() {
                 timer.cancel()
                 timer = createTimer()
             }
-
             override fun onNothingSelected(parent: AdapterView<*>) {}
         }
 
-
         mediaPlayer = MediaPlayer.create(applicationContext, R.raw.back_sound)
-
         timer = createTimer()
 
         close.setOnClickListener {
             showDialog(this)
         }
 
+        speech.setOnClickListener {
+            if(isVoiceEnabled) {
+                isVoiceEnabled = false
+                speech.setImageResource(R.drawable.mic_no)
+            } else {
+                isVoiceEnabled = true
+                speech.setImageResource(R.drawable.mic)
+            }
+        }
+
         start.setOnClickListener {
             timer.start()
-
             spinner.isEnabled = false
             spinner.isClickable = false
             mediaPlayer.isLooping = true
             mediaPlayer.start()
-
             start.isClickable = false
             start.text = getString(R.string.str_end)
         }
@@ -112,10 +114,20 @@ class MeditationActivity : AppCompatActivity() {
 
                 if((minutes == 19L || minutes == 9L) && sec == 55L) {
                     tts = TextToSpeech(applicationContext, TextToSpeech.OnInitListener {
-                        if(it == TextToSpeech.SUCCESS) {
+                        if(isVoiceEnabled && it == TextToSpeech.SUCCESS) {
                             tts.language = Locale.US
                             tts.setSpeechRate(0.8F)
                             tts.speak("Close your eyes and sit comfortably", TextToSpeech.QUEUE_ADD, null)
+                        }
+                    })
+                }
+
+                if(minutes == 2L) {
+                    tts = TextToSpeech(applicationContext, TextToSpeech.OnInitListener {
+                        if(isVoiceEnabled && it == TextToSpeech.SUCCESS) {
+                            tts.language = Locale.US
+                            tts.setSpeechRate(0.8F)
+                            tts.speak("Stop thinking mantra, take two more minutes", TextToSpeech.QUEUE_ADD, null)
                         }
                     })
                 }
@@ -141,5 +153,4 @@ class MeditationActivity : AppCompatActivity() {
         alert.setTitle("Are you sure")
         alert.show()
     }
-
 }

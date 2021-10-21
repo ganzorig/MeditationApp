@@ -1,19 +1,13 @@
 package com.miu.meditationapp
 
-import android.animation.Animator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.speech.tts.TextToSpeech
-import android.view.View
 import android.widget.TextView
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_breath.*
 import kotlinx.android.synthetic.main.activity_breath.close
 import kotlinx.android.synthetic.main.activity_breath.indicator
 import kotlinx.android.synthetic.main.activity_breath.start
-import kotlinx.android.synthetic.main.activity_meditation.*
-import java.util.*
 import java.util.concurrent.TimeUnit
 
 class BreathActivity : AppCompatActivity() {
@@ -38,10 +32,8 @@ class BreathActivity : AppCompatActivity() {
 
     private fun toggle() {
         if(isRunning) {
-            breathe.pauseAnimation()
-            timer.cancel()
-            start.isClickable = false
-            start.text = "Canceled"
+            stopExercise()
+            start.text = "Start"
         } else {
             breathe.playAnimation()
             start.text = getString(R.string.str_end)
@@ -62,11 +54,15 @@ class BreathActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                println("finish")
-                breathe.clearAnimation()
-                isRunning = false
+                stopExercise()
             }
         }
+    }
+
+    fun stopExercise() {
+        breathe.pauseAnimation()
+        isRunning = false
+        timer.cancel()
     }
 
     override fun onStop() {

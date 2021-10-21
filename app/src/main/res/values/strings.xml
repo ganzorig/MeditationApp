@@ -2,9 +2,8 @@
     <string name="skip">Skip</string>
     <string name="app_name">GENO</string>
     <string name="str_start">Start</string>
-    <string name="str_end">End</string>
+    <string name="str_end">Stop</string>
 
-    <string name="hello_blank_fragment">sadas</string>
     <string name="good_morning">Good morning!</string>
     <string name="title_activity_meditation">MeditationActivity</string>
     <string name="dummy_button">Dummy Button</string>
@@ -29,6 +28,7 @@
     <string name="str_times_breathe">times done breathing exercise</string>
     <string name="str_min_breathe">minutes done breathing exercise</string>
 
+    <string name="str_motivate">You are doing great. Go ahead!!</string>
     <string-array name="minutes">
         <item>20:00 minutes</item>
         <item>10:00 minutes</item>
