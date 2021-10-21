@@ -21,7 +21,6 @@ import kotlinx.android.synthetic.main.fragment_home.view.*
 import org.w3c.dom.Comment
 
 class ForumBody : AppCompatActivity() {
-    //val recyclerView: RecyclerView? = null
     private var adapter: RecyclerAdapter? = null
     var items : MutableList<PostHistory> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,40 +33,26 @@ class ForumBody : AppCompatActivity() {
             startActivity(Intent(this, ForumNewPost::class.java))
         }
 
-
-
-        Log.e("TAG", "hope");
-
         val ref = FirebaseDatabase.getInstance().getReference("posts")
         ref.keepSynced(true)
         val postListener : ValueEventListener = object:ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 items.clear()
-                //courtsOrig.clear();
-                //firebase-н courts доторх өгөгдлүүдийг бүгдийг нь авж байна...
                 for (courtSnapshot in dataSnapshot.children) {
                     val uid = courtSnapshot.child("uid").value as String?
                     val posteddate = courtSnapshot.child("posteddate").value as String?
                     val postbody = courtSnapshot.child("postbody").value as String?
                     val newFood = PostHistory(uid!!, posteddate!!, postbody!!)
-                    //courts гэсэн лист рүүгээ дээрхүүдийг оруулж байна
                     items.add(newFood)
-                    Log.e("Spe","-------------------$postbody")
-
                 }
-                adapter = RecyclerAdapter(applicationContext,items)
-
-                adapter!!.notifyDataSetChanged() //refresh
-
+                adapter = RecyclerAdapter(applicationContext, items)
+                adapter!!.notifyDataSetChanged()
                 recyclerView?.adapter = adapter
-                //recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
             }
         }
         ref.addValueEventListener(postListener)
     }
-
 }

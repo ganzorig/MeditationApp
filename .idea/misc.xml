@@ -3,30 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-<<<<<<< HEAD
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/drawable/progress_bar.xml" value="0.28177083333333336" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/drawable/rounded_button.xml" value="0.28177083333333336" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/activity_breath.xml" value="0.265625" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/activity_chat_log.xml" value="0.1234375" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/activity_forum_body.xml" value="0.12" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/activity_forum_new_post.xml" value="0.1375" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/activity_latest_messages.xml" value="0.1" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/activity_login.xml" value="0.265625" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/activity_login_add_user.xml" value="0.265625" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/activity_meditation_forum.xml" value="0.265625" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/activity_new_message.xml" value="0.2" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/chat_from_row.xml" value="0.264" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/chat_to_row.xml" value="0.1234375" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/fragment_about.xml" value="0.1" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/fragment_forum.xml" value="0.2" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/fragment_home.xml" value="0.1515625" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/latest_message_row.xml" value="0.2" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/main_activity.xml" value="0.265625" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/post_history_items.xml" value="0.264" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/layout/user_row_new_message.xml" value="0.265625" />
-        <entry key="..\:/Users/norov/AndroidStudioProjects/MeditationApp/app/src/main/res/menu/nav_menu.xml" value="0.1375" />
-        <entry key="..\:/Users/norov/AppData/Local/Android/Sdk/platforms/android-30/data/res/layout/activity_list_item.xml" value="0.16799999999999998" />
-=======
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.29384615384615387" />
         <entry key="app/src/main/res/drawable/backround.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/drawable/button_back.xml" value="0.29384615384615387" />
@@ -35,6 +11,7 @@
         <entry key="app/src/main/res/drawable/progress_bar.xml" value="0.25462962962962965" />
         <entry key="app/src/main/res/font/avenir.xml" value="0.3076923076923077" />
         <entry key="app/src/main/res/layout/activity_breath.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_forum_body.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login_add_user.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14895833333333333" />
@@ -43,20 +20,21 @@
         <entry key="app/src/main/res/layout/activity_onboarding.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/activity_video.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/activity_videos_list.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/chat_from_row.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/chat_to_row.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/fragment_about.xml" value="0.13240740740740742" />
-        <entry key="app/src/main/res/layout/fragment_forum.xml" value="0.13240740740740742" />
+        <entry key="app/src/main/res/layout/fragment_forum.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_learn.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.13240740740740742" />
         <entry key="app/src/main/res/layout/onbaording_item_container.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/post_history_items.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/report.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.29384615384615387" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.16510416666666666" />
->>>>>>> 86cbd4d6c6a61838d479e6a9c013fbb96baf5980
       </map>
     </option>
   </component>
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
