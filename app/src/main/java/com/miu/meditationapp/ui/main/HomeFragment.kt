@@ -9,6 +9,7 @@ import android.content.Context.ALARM_SERVICE
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +18,9 @@ import android.widget.Toast
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
+import com.miu.meditationapp.*
+
 import com.google.firebase.auth.FirebaseUser
 import com.miu.meditationapp.BreathActivity
 import com.miu.meditationapp.MainActivity
@@ -24,6 +28,7 @@ import com.miu.meditationapp.MeditationActivity
 import com.miu.meditationapp.OnboardingActivity
 import com.miu.meditationapp.R
 import com.miu.meditationapp.helper.NotificationReceiver
+import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import java.util.*
 
@@ -32,14 +37,28 @@ class HomeFragment : Fragment() {
     private lateinit var alarmManager: AlarmManager
     private lateinit var calendar: Calendar
     private lateinit var picker: MaterialTimePicker
+    private lateinit var database : DatabaseReference
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
-
-
         calendar = Calendar.getInstance()
         createNotificationChannel()
         currentUser = FirebaseAuth.getInstance().currentUser!!
 
+        val uid = FirebaseAuth.getInstance().uid
+
+        database = FirebaseDatabase.getInstance().getReference("users")
+        database.child(uid!!).get().addOnSuccessListener {
+            if (it.exists()) {
+                textView3.text = it.child("firstname").value.toString()
+            } else {
+                Toast.makeText(context, "User doesn't exist.", Toast.LENGTH_SHORT).show()
+            }
+        }.addOnFailureListener {
+            Toast.makeText(context, "User doesn't exist.", Toast.LENGTH_SHORT).show()
+        }
+
+        currentUser = FirebaseAuth.getInstance().currentUser!!
         alarmManager = context?.getSystemService(ALARM_SERVICE) as AlarmManager
 
         view.button.setOnClickListener {
@@ -113,7 +132,6 @@ class HomeFragment : Fragment() {
             var notificationManager: NotificationManager? = context?.getSystemService(NotificationManager::class.java)
             notificationManager?.createNotificationChannel(channel)
         }
-
     }
 
     fun cancelAlarm() {
@@ -126,5 +144,4 @@ class HomeFragment : Fragment() {
 
         alarmManager.cancel(pendingInteng)
     }
-
 }

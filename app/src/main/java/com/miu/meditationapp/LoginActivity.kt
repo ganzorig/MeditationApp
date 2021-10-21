@@ -46,6 +46,7 @@ class LoginActivity : AppCompatActivity() {
             val pwd:String = inputPassword.text.toString()
             if (TextUtils.isEmpty(email) || TextUtils.isEmpty(pwd)) {
                 Toast.makeText(this, "Please enter your credentials", Toast.LENGTH_SHORT).show()
+
             } else {
                 mAuth.signInWithEmailAndPassword(email, pwd).addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {

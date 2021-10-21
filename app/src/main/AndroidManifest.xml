@@ -48,6 +48,20 @@ package="com.miu.meditationapp">
             android:name=".MainActivity"
             android:exported="true">
         </activity>
+        <activity android:name=".messages.LatestMessagesActivity"
+                  android:exported="true">
+
+        </activity>
+        <activity android:name=".messages.NewMessageActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".messages.LatestMessagesActivity" />
+        </activity>
+        <activity android:name=".messages.ChatLogActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".messages.LatestMessagesActivity" />
+        </activity>
         <receiver android:name=".helper.NotificationReceiver" />
     </application>
 
