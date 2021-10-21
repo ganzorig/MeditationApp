@@ -46,8 +46,8 @@ class OnboardingActivity : AppCompatActivity() {
                 ),
                 OnboardingItem(
                     onboardingImage = R.drawable.img_book,
-                    title = "Breathe",
-                    description = "We'll guide you through ..."
+                    title = "Breathe exercise",
+                    description = "Learn how to build your resilience using your own breathe"
                 ),
                 OnboardingItem(
                     onboardingImage = R.drawable.img_communi,
@@ -56,11 +56,11 @@ class OnboardingActivity : AppCompatActivity() {
                 ),
                 OnboardingItem(
                     onboardingImage = R.drawable.img_paint,
-                    title = "Get inspired",
+                    title = "Courses for absolute beginners ",
                     description = "In fact, we made a quick video to help you learn the basics"
                 ),
                 OnboardingItem(
-                    onboardingImage = R.drawable.img_paint,
+                    onboardingImage = R.drawable.ready,
                     title = "Ready!",
                     description = "Now, get ready to sit back and enjoy GENO application"
                 )
