@@ -6,6 +6,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <ProgressBar
+        android:id="@+id/statusBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/str_motivate"
+        android:textSize="12sp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,12 +29,9 @@
         android:layout_marginBottom="16dp">
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="80dp"
-            android:checkable="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:outlineAmbientShadowColor="@color/green_700"
+            android:outlineSpotShadowColor="@color/transparent"
             app:cardCornerRadius="16dp"
             android:layout_weight="1"
             android:layout_marginRight="16dp"
@@ -33,16 +44,19 @@
                 android:padding="16dp">
 
                 <TextView
+                    android:id="@+id/val_meditate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="36"
+                    android:text="-"
                     android:textStyle="bold"
+                    android:textColor="@color/green_500"
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/str_min_meditate"
+                    android:textColor="@color/green_500"
                     android:textAppearance="?attr/textAppearanceBody2" />
             </LinearLayout>
 
@@ -56,12 +70,11 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="80dp"
-            android:outlineAmbientShadowColor="@color/green_700"
+            android:outlineSpotShadowColor="@color/transparent"
             app:cardCornerRadius="16dp"
             android:layout_weight="1"
-            android:layout_marginRight="10dp"
             tools:ignore="MissingConstraints">
 
             <LinearLayout
@@ -71,9 +84,11 @@
                 android:padding="16dp">
 
                 <TextView
+                    android:id="@+id/val_meditate_times"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="16"
+                    android:text="-"
+                    android:textColor="@color/light_blue_600"
                     android:textStyle="bold"
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
@@ -81,6 +96,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/str_times_meditate"
+                    android:textColor="@color/light_blue_600"
                     android:textAppearance="?attr/textAppearanceBody2" />
             </LinearLayout>
 
@@ -99,16 +115,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:layout_weight="2"
-        android:layout_marginBottom="16dp">
+        android:layout_weight="2">
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
-            android:layout_height="90dp"
-            android:checkable="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:outlineAmbientShadowColor="@color/green_700"
+            android:layout_width="0dp"
+            android:layout_height="95dp"
+            android:outlineSpotShadowColor="@color/transparent"
             app:cardCornerRadius="16dp"
             android:layout_weight="1"
             android:layout_marginRight="16dp"
@@ -121,16 +133,19 @@
                 android:padding="16dp">
 
                 <TextView
+                    android:id="@+id/val_breathe"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="36"
+                    android:text="-"
                     android:textStyle="bold"
+                    android:textColor="@color/orange_500"
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/str_min_breathe"
+                    android:textColor="@color/orange_500"
                     android:textAppearance="?attr/textAppearanceBody2" />
             </LinearLayout>
 
@@ -144,12 +159,11 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
-            android:layout_height="90dp"
-            android:outlineAmbientShadowColor="@color/green_700"
+            android:layout_width="0dp"
+            android:layout_height="95dp"
+            android:outlineSpotShadowColor="@color/transparent"
             app:cardCornerRadius="16dp"
             android:layout_weight="1"
-            android:layout_marginRight="10dp"
             tools:ignore="MissingConstraints">
 
             <LinearLayout
@@ -161,14 +175,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="16"
+                    android:text="-"
+                    android:id="@+id/val_breathe_times"
                     android:textStyle="bold"
+                    android:textColor="@color/orange_300"
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/str_min_breathe"
+                    android:text="@string/str_times_breathe"
+                    android:textColor="@color/orange_300"
                     android:textAppearance="?attr/textAppearanceBody2" />
             </LinearLayout>
 

@@ -26,12 +26,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="24dp">
+            android:padding="16dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/good_morning"
+                android:layout_marginLeft="16dp"
                 android:layout_marginBottom="4dp"/>
 
             <TextView
@@ -40,6 +41,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="26sp"
                 android:textStyle="bold"
+                android:layout_marginLeft="16dp"
                 android:layout_marginBottom="8dp"/>
 
             <TextView
@@ -49,16 +51,10 @@
                 android:text="@string/quote"
                 android:paddingRight="100dp"
                 android:lineHeight="30dp"
-                android:layout_marginBottom="16dp"/>
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="8dp"/>
 
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-
-            <include  layout="@layout/report" android:id="@+id/id" />
+            <include layout="@layout/report" android:id="@+id/id" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/button"
@@ -148,32 +144,16 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/remind"
-                android:layout_width="160dp"
+                android:layout_width="180dp"
                 android:layout_height="56dp"
                 android:layout_weight="1"
                 android:textAllCaps="false"
-                app:cornerRadius="20dp"
+                app:cornerRadius="24dp"
                 android:layout_gravity="center"
                 android:layout_margin="8dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:backgroundTint="@color/orange_300"
                 android:text="Set Reminder" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/picker"
-                android:layout_width="160dp"
-                android:layout_height="56dp"
-                android:layout_weight="1"
-                android:textAllCaps="false"
-                app:cornerRadius="20dp"
-                android:layout_gravity="center"
-                android:layout_margin="8dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:backgroundTint="@color/orange_300"
-                android:text="Time picker" />
-
         </LinearLayout>
-
     </ScrollView>
-
 </FrameLayout>

@@ -46,15 +46,15 @@
 
         <ImageButton
             android:id="@+id/speech"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
             android:layout_margin="16dp"
             android:background="@color/transparent"
             android:scaleType="centerInside"
             app:layout_constraintBottom_toBottomOf="@+id/spinner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/spinner"
-            app:srcCompat="@drawable/speech" />
+            app:srcCompat="@drawable/mic" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageButton

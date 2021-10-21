@@ -60,7 +60,6 @@
             app:lottie_rawRes="@raw/anim_breathe"
             tools:ignore="MissingConstraints" />
 
-
         <TextView
             android:id="@+id/indicator"
             android:layout_width="wrap_content"
@@ -84,6 +83,5 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:backgroundTint="@color/green_700"
             android:text="@string/str_start" />
-
     </LinearLayout>
 </FrameLayout>
