@@ -72,7 +72,7 @@ class LoginAddUser  : AppCompatActivity() {
                          finish()
                      } else {
                          loadingPB.visibility = View.GONE
-                         Toast.makeText(this, "Fail to create user...", Toast.LENGTH_SHORT).show()
+                         Toast.makeText(this, "Your internet connection is not stable. Try again...", Toast.LENGTH_SHORT).show()
                      }
                 }
             }
