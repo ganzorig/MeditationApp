@@ -118,7 +118,7 @@ class HomeFragment : Fragment() {
         val medCount = viewModel.getMeditationCount()
         val breCount = viewModel.getBreatheCount()
         var percentage = 1
-        if(medCount > 0 || breCount > 0) {
+        if(medCount > 0 && breCount > 0) {
             percentage = (medMin + breMin) * 100 / (medCount * 20) + (breCount * 3)
         }
         view.statusBar.progress = percentage
