@@ -20,8 +20,8 @@ class NotificationReceiver: BroadcastReceiver() {
             .setContentIntent(pendingIntent)
             .setSmallIcon(R.drawable.about)
             .setContentTitle("Ding!!! ")
-            .setContentText("It is time to Meditate!")
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setContentText("It is time to Meditate! Click here to start meditating.")
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)
 
         var notificationManager = NotificationManagerCompat.from(context)
