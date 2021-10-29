@@ -45,7 +45,7 @@ class BreathActivity : AppCompatActivity() {
         }
 
         close.setOnClickListener {
-            showDialog(applicationContext)
+            showDialog(this)
         }
     }
 
