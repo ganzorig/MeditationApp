@@ -8,14 +8,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.miu.meditationapp.models.PostHistory
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_about.view.*
-
+import kotlinx.android.synthetic.main.fragment_home.*
+private lateinit var database : DatabaseReference
 class RecyclerAdapter(var context: Context, items: List<PostHistory>) :
+
     RecyclerView.Adapter<RecyclerAdapter.ViewHolder?>() {
     lateinit var items: List<PostHistory>
     private val mLayoutInflater: LayoutInflater
@@ -52,7 +57,20 @@ class RecyclerAdapter(var context: Context, items: List<PostHistory>) :
         holder.username.setText(items[position].uid)
         holder.postbody.setText(items[position].postbody)
         holder.posteddate.setText(items[position].posteddate)
-        Picasso.get().load("https://robohash.org/accusantiumvitaedolorem.png?size=300x300").into(holder.image)
+        val uid = FirebaseAuth.getInstance().uid
+
+        database = FirebaseDatabase.getInstance().getReference("users")
+        database.child(items[position].uid!!).get().addOnSuccessListener {
+            if (it.exists()) {
+                Picasso.get().load(it.child("profileImageUrl").value.toString()).into(holder.image)
+            } else {
+                Toast.makeText(context, "User doesn't exist.", Toast.LENGTH_SHORT).show()
+            }
+        }.addOnFailureListener {
+            Toast.makeText(context, "Fail!!! User doesn't exist.", Toast.LENGTH_SHORT).show()
+        }
+
+        //Picasso.get().load("https://robohash.org/accusantiumvitaedolorem.png?size=300x300").into(holder.image)
 
         if(FirebaseAuth.getInstance().uid == items[position].uid) {
             holder.postbody.setTextColor(R.color.white)
