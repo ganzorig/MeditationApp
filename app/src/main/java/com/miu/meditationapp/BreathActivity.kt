@@ -65,7 +65,7 @@ class BreathActivity : AppCompatActivity() {
                 minutes = TimeUnit.MILLISECONDS.toMinutes(ms) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(ms))
                 sec = TimeUnit.MILLISECONDS.toSeconds(ms) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(ms))
 
-                textIndicator.text = "$minutes:$sec"
+                textIndicator.text = "${minutes.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}"
 
                 if(minutes == 2L && sec == 57L) {
                     tts = TextToSpeech(applicationContext, TextToSpeech.OnInitListener {
