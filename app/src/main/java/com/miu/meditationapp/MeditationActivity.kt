@@ -141,7 +141,7 @@ class MeditationActivity : AppCompatActivity() {
                 if(minutes == 0L && sec == 10L) {
                     speak("No you can open your eyes.")
                 }
-                textIndicator.text = "$minutes:$sec"
+                textIndicator.text = "${minutes.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}"
             }
 
             override fun onFinish() {
