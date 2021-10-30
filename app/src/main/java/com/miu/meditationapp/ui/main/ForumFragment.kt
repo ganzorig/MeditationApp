@@ -17,6 +17,7 @@ import com.google.firebase.database.ValueEventListener
 import com.miu.meditationapp.*
 import com.miu.meditationapp.models.PostHistory
 import kotlinx.android.synthetic.main.fragment_forum.view.*
+import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.util.*
 import kotlin.collections.ArrayList
@@ -72,7 +73,8 @@ class ForumFragment : Fragment() {
         val postid = UUID.randomUUID()
         val ref = FirebaseDatabase.getInstance().getReference("/posts/$postid")
         val uid = FirebaseAuth.getInstance().uid
-        var currdate = LocalDateTime.now()
+        val sdf = SimpleDateFormat("MM/dd/yyyy hh:mm:ss")
+        var currdate = sdf.format(Date())
         val post = PostHistory(uid.toString(), currdate.toString(), view.edittext_chat.text.toString())
 
         ref.setValue(post)
