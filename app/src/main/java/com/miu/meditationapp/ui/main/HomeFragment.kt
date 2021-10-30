@@ -57,10 +57,10 @@ class HomeFragment : Fragment() {
             if (it.exists()) {
                 textView3.text = it.child("firstname").value.toString()
             } else {
-                Toast.makeText(context, "User doesn't exist.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Check your Internet connection.", Toast.LENGTH_SHORT).show()
             }
         }.addOnFailureListener {
-            Toast.makeText(context, "Fail!!! User doesn't exist.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Couldn't find the user. Internet connection have to connected properly.", Toast.LENGTH_SHORT).show()
         }
 
         alarmManager = context?.getSystemService(ALARM_SERVICE) as AlarmManager
