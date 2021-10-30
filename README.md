@@ -40,4 +40,4 @@
 
 MIT
 
-###GENO Team
+###by GENO Team
