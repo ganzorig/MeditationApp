@@ -36,7 +36,8 @@ class ForumFragment : Fragment() {
         view.recyclerV.layoutManager = LinearLayoutManager(context)
         items = arrayListOf()
 
-        val ref = FirebaseDatabase.getInstance().getReference("posts")
+        val ref = FirebaseDatabase.getInstance().getReference("posts").orderByChild("posteddate")
+
         ref.keepSynced(true)
         val postListener : ValueEventListener = object: ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
