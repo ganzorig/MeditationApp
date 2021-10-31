@@ -18,7 +18,6 @@ import kotlinx.android.synthetic.main.activity_login_add_user.*
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
-
 class LoginAddUser  : AppCompatActivity() {
     companion object {
         val TAG = "RegisterActivity"

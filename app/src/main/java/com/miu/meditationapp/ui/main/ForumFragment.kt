@@ -18,7 +18,6 @@ import com.miu.meditationapp.*
 import com.miu.meditationapp.models.PostHistory
 import kotlinx.android.synthetic.main.fragment_forum.view.*
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
 import java.util.*
 import kotlin.collections.ArrayList
 
