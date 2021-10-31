@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.miu.meditationapp.R
 
-
 class LearnFragment : Fragment(), MyAdapter.ItemClickListener {
     private lateinit var viewModel: LearnViewModel
 

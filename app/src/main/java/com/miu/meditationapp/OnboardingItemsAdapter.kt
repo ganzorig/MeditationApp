@@ -38,7 +38,6 @@ RecyclerView.Adapter<OnboardingItemsAdapter.OnboardingItemViewHolder> ()  {
             imageOnboarding.setImageResource(onboardingItem.onboardingImage)
             textTitle.text = onboardingItem.title
             textDescription.text = onboardingItem.description
-
         }
     }
 }
