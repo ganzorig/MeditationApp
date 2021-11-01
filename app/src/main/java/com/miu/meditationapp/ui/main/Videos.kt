@@ -1,7 +1,6 @@
 package com.miu.meditationapp.ui.main
 
 import java.io.Serializable
-import java.time.Duration
 
 class Videos : Serializable {
     var url: String = ""
@@ -19,6 +18,4 @@ class Videos : Serializable {
         this.image = image
         this.duration = duration
     }
-
-
 }

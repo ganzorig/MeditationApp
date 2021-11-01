@@ -1,14 +1,11 @@
 package com.miu.meditationapp.ui.main
 
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.miu.meditationapp.R
-import kotlinx.android.synthetic.main.fragment_home.*
 
 class AboutViewModel : ViewModel() {
      lateinit var database : DatabaseReference
@@ -36,7 +33,6 @@ class AboutViewModel : ViewModel() {
 
     fun getFirstName (): String {
         val uid = FirebaseAuth.getInstance().uid
-        println("UID$uid")
         database = FirebaseDatabase.getInstance().getReference("users")
         database.child(uid!!).get().addOnSuccessListener {
             if (it.exists()) {
@@ -49,7 +45,6 @@ class AboutViewModel : ViewModel() {
         }.addOnFailureListener {
             Log.d("AboutViewModel","Failed to load Photo")
         }
-        println("lastttttttttttt $firstname")
         return firstname
     }
     fun getLastName () {

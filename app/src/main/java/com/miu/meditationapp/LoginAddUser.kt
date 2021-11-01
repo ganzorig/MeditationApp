@@ -18,7 +18,6 @@ import kotlinx.android.synthetic.main.activity_login_add_user.*
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
-
 class LoginAddUser  : AppCompatActivity() {
     companion object {
         val TAG = "RegisterActivity"
@@ -72,7 +71,7 @@ class LoginAddUser  : AppCompatActivity() {
                          finish()
                      } else {
                          loadingPB.visibility = View.GONE
-                         Toast.makeText(this, "Fail to create user...", Toast.LENGTH_SHORT).show()
+                         Toast.makeText(this, "Your internet connection is not stable. Try again...", Toast.LENGTH_SHORT).show()
                      }
                 }
             }

@@ -1,6 +1,4 @@
 # MeditationApp
-
-# MeditationApp
 ## 1. Prepare environment
 - Go to the android studio official website then download and install to your own appropriate IDE in your OS.
 - Clone our project and build all the grandle dependency (it takes a time little bit longer).
@@ -88,4 +86,5 @@
 
 MIT
 
-###by GENO Team...
+Geno team
+

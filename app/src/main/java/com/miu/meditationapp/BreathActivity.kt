@@ -1,10 +1,13 @@
 package com.miu.meditationapp
 
+import android.content.Context
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.speech.tts.TextToSpeech
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -42,7 +45,7 @@ class BreathActivity : AppCompatActivity() {
         }
 
         close.setOnClickListener {
-            finish()
+            showDialog(this)
         }
     }
 
@@ -65,7 +68,7 @@ class BreathActivity : AppCompatActivity() {
                 minutes = TimeUnit.MILLISECONDS.toMinutes(ms) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(ms))
                 sec = TimeUnit.MILLISECONDS.toSeconds(ms) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(ms))
 
-                textIndicator.text = "$minutes:$sec"
+                textIndicator.text = "${minutes.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}"
 
                 if(minutes == 2L && sec == 57L) {
                     tts = TextToSpeech(applicationContext, TextToSpeech.OnInitListener {
@@ -88,6 +91,20 @@ class BreathActivity : AppCompatActivity() {
         breathe.pauseAnimation()
         isRunning = false
         timer.cancel()
+    }
+
+    private fun showDialog(context: Context){
+        val builder: AlertDialog.Builder = AlertDialog.Builder(context)
+
+        builder.setMessage("Do you want to stop breathing exercise ?").setCancelable(true)
+        builder.setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, which ->
+            finish()
+        })
+
+        builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, which -> dialog.cancel() })
+        val alert = builder.create()
+        alert.setTitle("Are you sure")
+        alert.show()
     }
 
     override fun onStop() {
