@@ -11,6 +11,10 @@
 - UI is based basic androidx, material design and all the related photos using Picasso library.
 - In home screen some of statistical dashboard's data stored its own storage(Shared Preference).
 - 4 main tab (android fragment)
+	- Main dashbaord
+	- Leaning
+	- Forum (free typing tool everyone)
+	- About
 
 ## 3.Screeshots
 
