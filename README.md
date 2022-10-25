@@ -12,9 +12,9 @@
 - In home screen some of statistical dashboard's data stored its own storage(Shared Preference).
 - 4 main tab (android fragment)
 	- Main dashbaord
-	- Leaning
+	- Leaning(Video contents and reading topics)
 	- Forum (free typing tool everyone)
-	- About
+	- About (Our team's introduction)
 
 ## 3.Screeshots
 
