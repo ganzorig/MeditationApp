@@ -21,6 +21,9 @@
     <string name="btn_login">Log In</string>
     <string name="idTVLogin">Already a User ? Login Here</string>
     <string name="registerTV">Sign Up! Click here</string>
+    <string name="forgotPassword">Forgot password?</string>
+    <string name="btn_forgotPassword">Request Password Change</string>
+    <string name="forgotPassword_desc">\n\n\nEnter the email associated with your GENO account.* \n\nAn email will be sent to you with instructions for resetting your password.*</string>
     <string name="breathing_desc">Breathing is the greatest pleasure in life.</string>
     <string name="meditation_desc">The act of meditation is being spacious.</string>
     <string name="str_times_meditate">times meditated</string>
