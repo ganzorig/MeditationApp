@@ -17,6 +17,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var inputEmail: TextInputEditText
     lateinit var inputPassword: TextInputEditText
     lateinit var loginbutton:Button
+    lateinit var forgotbutton:TextView
     lateinit var registertv:TextView
     lateinit var loadingPB:ProgressBar
     lateinit var mAuth:FirebaseAuth
@@ -31,6 +32,7 @@ class LoginActivity : AppCompatActivity() {
 
         loginbutton = findViewById(R.id.btn_login)
         registertv = findViewById(R.id.registerTV)
+        forgotbutton = findViewById(R.id.forgotPassword)
         mAuth = FirebaseAuth.getInstance()
         loadingPB = findViewById(R.id.progressbar)
 
@@ -39,6 +41,10 @@ class LoginActivity : AppCompatActivity() {
         registertv.setOnClickListener() {
             startActivity(Intent(this, LoginAddUser::class.java))
         }
+        forgotbutton.setOnClickListener() {
+            startActivity(Intent(this, LoginForgotPassword::class.java))
+        }
+
         loginbutton.setOnClickListener() {
             val email:String = inputEmail.text.toString()
             val pwd:String = inputPassword.text.toString()

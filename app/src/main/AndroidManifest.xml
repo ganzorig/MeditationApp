@@ -18,6 +18,9 @@
             android:name=".LoginAddUser"
             android:exported="true" />
         <activity
+            android:name=".LoginForgotPassword"
+            android:exported="true" />
+        <activity
             android:name=".ui.main.VideosView"
             android:exported="true" />
         <activity
