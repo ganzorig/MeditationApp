@@ -2,14 +2,15 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.gms.google-services'
 }
 
 android {
-    compileSdk 30
+    compileSdk 31
     defaultConfig {
         applicationId "com.miu.meditationapp"
         minSdk 16
-        targetSdk 30
+        targetSdk 31
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -39,6 +40,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database-ktx:20.0.2'
     apply plugin : "kotlin-android"
     apply plugin : "kotlin-android-extensions"
+    implementation 'com.google.android.gms:play-services-auth:20.3.0'
 
     def lottieVersion = "4.2.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
